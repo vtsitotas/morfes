@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin — Μορφές</title>
+  <link rel="icon" href="photos/out.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,600;1,400&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="admin.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="adm-login" class="adm-login-wrap">
+  <div class="adm-login-card">
+    <h1 class="adm-login-title">Μορφές</h1>
+    <p class="adm-login-sub">Διαχείριση Συστήματος</p>
+    <form id="adm-login-form">
+      <div class="adm-field">
+        <label for="adm-email">Email</label>
+        <input id="adm-email" type="email" placeholder="admin@morfes.gr" required />
+      </div>
+      <div class="adm-field">
+        <label for="adm-pass">Κωδικός</label>
+        <input id="adm-pass" type="password" placeholder="••••••••" required />
+      </div>
+      <button id="adm-login-btn" type="submit" class="adm-btn-primary">Σύνδεση</button>
+      <p id="adm-login-err" class="adm-error"></p>
+    </form>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="adm-dashboard" style="display:none">
+
+  <nav class="adm-navbar">
+    <span class="adm-navbar-brand">Μορφές — Admin</span>
+    <div class="adm-navbar-right">
+      <span class="adm-navbar-user" id="adm-user-label"></span>
+      <button id="adm-logout-btn" class="adm-logout">Αποσύνδεση</button>
+    </div>
+  </nav>
+
+  <div class="adm-layout">
+
+    <!-- Sidebar -->
+    <aside class="adm-sidebar">
+      <button class="adm-nav-btn active" data-section="bookings">📅 Κρατήσεις</button>
+      <button class="adm-nav-btn" data-section="services">✂️ Υπηρεσίες</button>
+      <button class="adm-nav-btn" data-section="hours">🕐 Ωράριο</button>
+      <button class="adm-nav-btn" data-section="exceptions">📆 Εξαιρέσεις</button>
+      <button class="adm-nav-btn" data-section="blocked">🚫 Αποκλ. Ημέρες</button>
+    </aside>
+
+    <main class="adm-main">
+
+      <!-- BOOKINGS -->
+      <section id="sec-bookings" class="adm-section">
+        <div class="adm-card">
+          <h2 class="adm-card-title">📅 Κρατήσεις</h2>
+          <div class="adm-tabs">
+            <button class="adm-tab active" data-tab="upcoming">Επερχόμενες</button>
+            <button class="adm-tab" data-tab="past">Παρελθόν</button>
+            <button class="adm-tab" data-tab="cancelled">Ακυρωμένες</button>
+          </div>
+          <div style="overflow-x:auto">
+            <table class="adm-table">
+              <thead>
+                <tr>
+                  <th>Ημερομηνία</th>
+                  <th>Ώρα</th>
+                  <th>Πελάτης</th>
+                  <th>Υπηρεσία</th>
+                  <th>Κατάσταση</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="adm-bookings-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section id="sec-services" class="adm-section" style="display:none">
+        <div class="adm-card">
+          <h2 class="adm-card-title">✂️ Υπηρεσίες</h2>
+          <p class="adm-hint">Οι ενεργές υπηρεσίες εμφανίζονται στο σύστημα κράτησης.</p>
+          <div id="adm-services-list"></div>
+          <hr class="adm-divider" />
+          <h3 class="adm-sub-title">Προσθήκη νέας υπηρεσίας</h3>
+          <div class="adm-form-row">
+            <input id="svc-emoji"    type="text"   placeholder="✂️" class="adm-input adm-input-sm" style="max-width:5rem" />
+            <input id="svc-name"     type="text"   placeholder="Όνομα υπηρεσίας" class="adm-input" />
+            <input id="svc-duration" type="number" placeholder="Διάρκεια (λεπτά)" class="adm-input adm-input-sm" min="15" step="15" style="max-width:9rem" />
+            <button id="adm-add-svc-btn" class="adm-btn-sm">+ Προσθήκη</button>
+          </div>
+          <p id="adm-svc-error" class="adm-error" style="display:none"></p>
+        </div>
+      </section>
+
+      <!-- WORKING HOURS -->
+      <section id="sec-hours" class="adm-section" style="display:none">
+        <div class="adm-card">
+          <h2 class="adm-card-title">🕐 Εβδομαδιαίο Ωράριο</h2>
+          <p class="adm-hint">Ορίστε τις ώρες λειτουργίας ανά ημέρα. Οι κλειστές ημέρες δεν εμφανίζονται στο ημερολόγιο κρατήσεων.</p>
+          <div id="adm-hours-list"></div>
+          <p class="adm-hint" style="margin-top:1rem">
+            Βήμα ραντεβού:
+            <select id="adm-slot-step" class="adm-select" style="margin-left:0.5rem">
+              <option value="15">15 λεπτά</option>
+              <option value="20">20 λεπτά</option>
+              <option value="30">30 λεπτά</option>
+              <option value="45">45 λεπτά</option>
+              <option value="60">60 λεπτά</option>
+            </select>
+            <button id="adm-save-step-btn" class="adm-btn-sm" style="margin-left:0.5rem">Αποθήκευση</button>
+          </p>
+        </div>
+      </section>
+
+      <!-- EXCEPTION DATES -->
+      <section id="sec-exceptions" class="adm-section" style="display:none">
+        <div class="adm-card">
+          <h2 class="adm-card-title">📆 Εξαιρέσεις Ωραρίου</h2>
+          <p class="adm-hint">
+            Ορίστε συγκεκριμένες ημερομηνίες που <strong>αντικαθιστούν</strong> το κανονικό εβδομαδιαίο ωράριο.
+            Π.χ. ανοιχτά μία Δευτέρα, ή κλειστά μία Τετάρτη για αργία.
+          </p>
+          <div id="adm-exceptions-list"></div>
+          <hr class="adm-divider" />
+          <h3 class="adm-sub-title">Προσθήκη εξαίρεσης</h3>
+          <div class="adm-exception-form">
+            <input id="exc-date" type="date" class="adm-input" style="max-width:180px" />
+            <label class="adm-toggle-label">
+              <input id="exc-is-open" type="checkbox" checked />
+              <span id="exc-open-label">Ανοιχτό</span>
+            </label>
+            <span id="exc-hours-wrap" style="display:flex;align-items:center;gap:0.5rem">
+              <input id="exc-open-time"  type="time" value="09:00" class="adm-time-input" />
+              <span style="color:rgba(255,255,255,0.3)">–</span>
+              <input id="exc-close-time" type="time" value="19:00" class="adm-time-input" />
+            </span>
+            <input id="exc-note" type="text" placeholder="Σημείωση (προαιρετικό)" class="adm-input" style="max-width:200px" />
+            <button id="adm-add-exc-btn" class="adm-btn-sm">+ Προσθήκη</button>
+          </div>
+          <p id="adm-exc-error" class="adm-error" style="display:none"></p>
+        </div>
+      </section>
+
+      <!-- BLOCKED DATES -->
+      <section id="sec-blocked" class="adm-section" style="display:none">
+        <div class="adm-card">
+          <h2 class="adm-card-title">🚫 Αποκλεισμένες Ημέρες</h2>
+          <p class="adm-hint">Οι ημέρες αυτές δεν εμφανίζονται ως διαθέσιμες στο σύστημα κράτησης.</p>
+          <div id="adm-blocked-list" class="adm-blocked-list"></div>
+          <div class="adm-add-date">
+            <input id="adm-date-input" type="date" />
+            <button id="adm-add-date-btn" class="adm-btn-sm">+ Προσθήκη</button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>

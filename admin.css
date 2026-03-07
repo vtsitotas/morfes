@@ -1,0 +1,219 @@
+/* Morfes Admin Panel — dark green theme */
+:root {
+  --green:      #83942C;
+  --green-mid:  #9aaa35;
+  --green-dark: #374231;
+  --green-foot: #252E1E;
+  --green-mob:  #2E3B29;
+  --bg:         #1c2418;
+  --surface:    #252e1e;
+  --border:     rgba(131,148,44,0.15);
+  --text:       rgba(255,255,255,0.9);
+  --text-muted: rgba(255,255,255,0.4);
+}
+
+* { box-sizing: border-box; }
+body { font-family: 'Outfit', sans-serif; margin: 0; background: var(--bg); color: var(--text); }
+
+/* ── Login ── */
+.adm-login-wrap {
+  min-height: 100vh; display: flex; align-items: center;
+  justify-content: center; background: var(--bg); padding: 1rem;
+}
+.adm-login-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 1.5rem; padding: 2.5rem;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.4); width: 100%; max-width: 380px;
+}
+.adm-login-title {
+  font-family: 'Cormorant Garant', serif; font-size: 2rem; font-style: italic;
+  color: #fff; text-align: center; margin-bottom: 0.25rem;
+}
+.adm-login-sub { color: var(--text-muted); font-size: 0.85rem; text-align: center; margin-bottom: 1.5rem; }
+
+/* ── Fields ── */
+.adm-field { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
+.adm-field label { font-size: 0.875rem; font-weight: 500; color: var(--text-muted); }
+.adm-field input, .adm-input {
+  border: 1.5px solid var(--border); border-radius: 0.75rem;
+  padding: 0.75rem 1rem; font-size: 0.9rem; outline: none;
+  transition: border-color 0.15s; font-family: inherit;
+  background: rgba(255,255,255,0.05); color: var(--text);
+}
+.adm-field input:focus, .adm-input:focus { border-color: var(--green); }
+.adm-input-sm { padding: 0.6rem 0.75rem; }
+
+/* ── Buttons ── */
+.adm-btn-primary {
+  width: 100%; padding: 0.875rem; border-radius: 0.75rem;
+  background: var(--green); color: white; font-weight: 600;
+  font-size: 0.95rem; border: none; cursor: pointer;
+  transition: background 0.15s; font-family: inherit;
+}
+.adm-btn-primary:hover    { background: var(--green-mid); }
+.adm-btn-primary:disabled { background: rgba(255,255,255,0.1); cursor: not-allowed; }
+
+.adm-btn-danger {
+  padding: 0.35rem 0.65rem; border-radius: 0.5rem;
+  background: rgba(239,68,68,0.1); color: #f87171; font-size: 0.8rem;
+  font-weight: 600; border: 1px solid rgba(239,68,68,0.2); cursor: pointer;
+  transition: background 0.15s; font-family: inherit;
+}
+.adm-btn-danger:hover { background: rgba(239,68,68,0.18); }
+
+.adm-btn-sm {
+  padding: 0.4rem 0.85rem; border-radius: 0.5rem;
+  background: rgba(131,148,44,0.12); color: var(--green-mid); font-size: 0.85rem;
+  font-weight: 600; border: 1px solid var(--border); cursor: pointer;
+  transition: background 0.15s; font-family: inherit; white-space: nowrap;
+}
+.adm-btn-sm:hover { background: rgba(131,148,44,0.2); }
+
+.adm-error  { color: #f87171; font-size: 0.85rem; text-align: center; margin-top: 0.75rem; }
+.adm-hint   { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1rem; }
+.adm-loading { color: var(--text-muted); font-size: 0.85rem; }
+.adm-empty-msg { color: var(--text-muted); font-size: 0.9rem; padding: 1rem 0; }
+
+/* ── Navbar ── */
+.adm-navbar {
+  background: var(--green-foot); padding: 0 1.5rem; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+  position: sticky; top: 0; z-index: 10; border-bottom: 1px solid var(--border);
+}
+.adm-navbar-brand {
+  font-family: 'Cormorant Garant', serif; font-style: italic;
+  font-size: 1.2rem; color: white; font-weight: 600;
+}
+.adm-navbar-right { display: flex; align-items: center; gap: 1rem; }
+.adm-navbar-user  { font-size: 0.85rem; color: var(--text-muted); }
+.adm-logout {
+  background: none; border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.6);
+  padding: 0.35rem 0.75rem; border-radius: 0.5rem; font-size: 0.8rem;
+  cursor: pointer; font-family: inherit; transition: all 0.15s;
+}
+.adm-logout:hover { border-color: var(--green); color: var(--green-mid); }
+
+/* ── Layout ── */
+.adm-layout { display: flex; min-height: calc(100vh - 56px); }
+.adm-sidebar {
+  width: 200px; background: var(--surface); border-right: 1px solid var(--border);
+  padding: 1.25rem 0.75rem; display: flex; flex-direction: column; gap: 0.35rem;
+  flex-shrink: 0;
+}
+.adm-nav-btn {
+  background: none; border: none; color: var(--text-muted); text-align: left;
+  padding: 0.65rem 0.875rem; border-radius: 0.6rem; font-size: 0.875rem;
+  font-weight: 500; cursor: pointer; font-family: inherit; transition: all 0.15s;
+}
+.adm-nav-btn:hover  { background: rgba(255,255,255,0.04); color: var(--text); }
+.adm-nav-btn.active { background: rgba(131,148,44,0.12); color: var(--green-mid); }
+
+.adm-main    { flex: 1; padding: 2rem 1.5rem; max-width: 860px; }
+.adm-section { }
+
+/* ── Cards ── */
+.adm-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 1rem; padding: 1.5rem; margin-bottom: 1.5rem;
+}
+.adm-card-title {
+  font-family: 'Cormorant Garant', serif; font-size: 1.15rem;
+  color: #fff; margin-bottom: 1rem;
+  padding-bottom: 0.75rem; border-bottom: 1px solid var(--border);
+}
+.adm-sub-title { font-size: 0.9rem; font-weight: 600; color: var(--text); margin: 1rem 0 0.5rem; }
+.adm-divider   { border: none; border-top: 1px solid var(--border); margin: 1.25rem 0; }
+
+/* ── Table ── */
+.adm-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+.adm-table th {
+  text-align: left; padding: 0.6rem 0.75rem; color: var(--text-muted);
+  font-weight: 600; font-size: 0.72rem; text-transform: uppercase;
+  letter-spacing: 0.05em; border-bottom: 1px solid var(--border);
+}
+.adm-table td { padding: 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.04); color: var(--text); }
+.adm-table tr:last-child td { border-bottom: none; }
+.adm-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+.adm-badge {
+  display: inline-block; padding: 0.2rem 0.6rem;
+  border-radius: 9999px; font-size: 0.7rem; font-weight: 600;
+}
+.adm-badge-confirmed { background: rgba(52,211,153,0.12); color: #6ee7b7; }
+.adm-badge-cancelled { background: rgba(239,68,68,0.12);  color: #fca5a5; }
+.adm-empty           { text-align: center; color: var(--text-muted); padding: 2rem; font-size: 0.9rem; }
+
+/* ── Tabs ── */
+.adm-tabs { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
+.adm-tab {
+  padding: 0.45rem 1rem; border-radius: 0.5rem; font-size: 0.875rem;
+  font-weight: 500; cursor: pointer; border: 1px solid var(--border);
+  background: transparent; color: var(--text-muted); font-family: inherit; transition: all 0.15s;
+}
+.adm-tab.active { background: var(--green); color: white; border-color: var(--green); }
+
+/* ── Blocked dates ── */
+.adm-blocked-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; min-height: 2rem; }
+.adm-blocked-chip {
+  display: flex; align-items: center; gap: 0.5rem;
+  background: rgba(255,193,7,0.08); border: 1px solid rgba(255,193,7,0.2);
+  border-radius: 9999px; padding: 0.3rem 0.75rem;
+  font-size: 0.85rem; color: #fcd34d;
+}
+.adm-blocked-chip button {
+  background: none; border: none; cursor: pointer;
+  color: rgba(252,211,77,0.6); font-size: 1rem; line-height: 1;
+  padding: 0; display: flex; align-items: center; transition: color 0.15s;
+}
+.adm-blocked-chip button:hover { color: #f87171; }
+.adm-add-date { display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; }
+.adm-add-date input[type="date"] {
+  border: 1.5px solid var(--border); border-radius: 0.75rem;
+  padding: 0.5rem 0.75rem; font-size: 0.875rem; outline: none;
+  transition: border-color 0.15s; font-family: inherit;
+  background: rgba(255,255,255,0.05); color: var(--text);
+}
+.adm-add-date input[type="date"]:focus { border-color: var(--green); }
+
+/* ── Form row ── */
+.adm-form-row { display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; }
+
+/* ── Time input ── */
+.adm-time-input {
+  border: 1.5px solid var(--border); border-radius: 0.5rem;
+  padding: 0.4rem 0.6rem; font-size: 0.85rem; outline: none;
+  background: rgba(255,255,255,0.05); color: var(--text); font-family: inherit;
+  transition: border-color 0.15s;
+}
+.adm-time-input:focus { border-color: var(--green); }
+
+/* ── Select ── */
+.adm-select {
+  border: 1.5px solid var(--border); border-radius: 0.5rem;
+  padding: 0.35rem 0.6rem; font-size: 0.85rem; outline: none;
+  background: rgba(255,255,255,0.05); color: var(--text); font-family: inherit;
+  transition: border-color 0.15s; cursor: pointer;
+}
+.adm-select:focus { border-color: var(--green); }
+
+/* ── Checkbox ── */
+input[type="checkbox"] { accent-color: var(--green); width: 1rem; height: 1rem; cursor: pointer; }
+
+/* ── Exception form ── */
+.adm-exception-form {
+  display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap; margin-top: 0.5rem;
+}
+.adm-toggle-label {
+  display: flex; align-items: center; gap: 0.5rem;
+  font-size: 0.875rem; color: var(--text-muted); cursor: pointer; white-space: nowrap;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .adm-sidebar { width: 100%; flex-direction: row; overflow-x: auto; padding: 0.5rem; }
+  .adm-layout  { flex-direction: column; }
+  .adm-main    { padding: 1rem; }
+  .adm-nav-btn { white-space: nowrap; }
+  .adm-navbar-user { display: none; }
+  .adm-table th:nth-child(4), .adm-table td:nth-child(4) { display: none; }
+}

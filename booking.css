@@ -1,0 +1,147 @@
+/* Morfes Booking Widget — olive green theme */
+#booking-widget { max-width: 640px; margin: 0 auto; }
+
+/* Stepper */
+.bk-stepper {
+  display: flex; align-items: center; justify-content: center;
+  gap: 0; margin-bottom: 2rem; overflow-x: auto;
+}
+.bk-step { display: flex; flex-direction: column; align-items: center; gap: 0.25rem; min-width: 0; }
+.bk-step-circle {
+  width: 2rem; height: 2rem; border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.2); display: flex; align-items: center;
+  justify-content: center; font-size: 0.75rem; font-weight: 600;
+  color: rgba(255,255,255,0.4); background: transparent; flex-shrink: 0;
+}
+.bk-step.active .bk-step-circle { border-color: #83942C; background: #83942C; color: white; }
+.bk-step.done   .bk-step-circle { border-color: #83942C; background: rgba(131,148,44,0.15); color: #9aaa35; }
+.bk-step-label { font-size: 0.65rem; color: rgba(255,255,255,0.35); white-space: nowrap; }
+.bk-step.active .bk-step-label { color: #9aaa35; font-weight: 600; }
+.bk-step-line   { height: 2px; flex: 1; min-width: 1rem; background: rgba(255,255,255,0.1); margin-bottom: 1.25rem; }
+
+/* Titles */
+.bk-step-title {
+  font-family: 'Cormorant Garant', serif; font-size: 1.5rem; font-style: italic;
+  color: #ffffff; margin-bottom: 0.5rem; text-align: center;
+}
+.bk-step-sub { font-size: 0.85rem; color: rgba(255,255,255,0.5); text-align: center; margin-bottom: 1rem; }
+
+/* Service grid */
+.bk-service-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1rem; }
+.bk-service-card {
+  background: rgba(255,255,255,0.04); border: 1.5px solid rgba(255,255,255,0.1);
+  border-radius: 0.75rem; padding: 1.25rem 0.75rem; cursor: pointer;
+  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+  transition: border-color 0.2s, background 0.2s, transform 0.15s; text-align: center;
+  font-family: inherit;
+}
+.bk-service-card:hover    { border-color: #83942C; transform: translateY(-2px); background: rgba(131,148,44,0.08); }
+.bk-service-card.selected { border-color: #83942C; background: rgba(131,148,44,0.12); }
+.bk-service-icon { font-size: 1.75rem; }
+.bk-service-name { font-weight: 600; color: #ffffff; font-size: 0.9rem; }
+.bk-service-dur  { font-size: 0.75rem; color: rgba(255,255,255,0.45); }
+
+/* Calendar */
+.bk-cal-nav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; }
+.bk-cal-nav-btn {
+  width: 2rem; height: 2rem; border-radius: 50%; border: 1px solid rgba(255,255,255,0.15);
+  background: transparent; cursor: pointer; font-size: 1.1rem; color: #83942C;
+  display: flex; align-items: center; justify-content: center; transition: background 0.15s; font-family: inherit;
+}
+.bk-cal-nav-btn:hover:not([disabled]) { background: rgba(131,148,44,0.12); }
+.bk-cal-month { font-weight: 600; color: #ffffff; font-size: 0.95rem; text-transform: capitalize; }
+.bk-cal-grid  { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.2rem; margin-bottom: 1rem; }
+.bk-cal-header { text-align: center; font-size: 0.7rem; font-weight: 600; color: rgba(255,255,255,0.35); padding: 0.25rem 0; }
+.bk-cal-sun { color: rgba(239,68,68,0.7); }
+.bk-cal-day {
+  aspect-ratio: 1; border-radius: 50%; border: none; background: transparent;
+  cursor: pointer; font-size: 0.85rem; color: rgba(255,255,255,0.85);
+  transition: background 0.15s, color 0.15s; display: flex; align-items: center;
+  justify-content: center; width: 100%; font-family: inherit;
+}
+.bk-cal-day:hover:not([disabled]) { background: rgba(131,148,44,0.15); color: #9aaa35; }
+.bk-cal-day.selected { background: #83942C; color: white; }
+.bk-cal-day.disabled { color: rgba(255,255,255,0.18); cursor: not-allowed; }
+
+/* Time slots */
+.bk-slots-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; margin-bottom: 1rem; }
+.bk-slot {
+  padding: 0.6rem 0.25rem; border: 1.5px solid rgba(255,255,255,0.12); border-radius: 0.5rem;
+  background: rgba(255,255,255,0.04); cursor: pointer; font-size: 0.85rem;
+  color: rgba(255,255,255,0.85); font-weight: 500; transition: all 0.15s;
+  text-align: center; font-family: inherit;
+}
+.bk-slot:hover    { border-color: #83942C; color: #9aaa35; }
+.bk-slot.selected { background: #83942C; border-color: #83942C; color: white; }
+.bk-no-slots { text-align: center; color: rgba(255,255,255,0.4); padding: 2rem; }
+
+/* Customer form */
+.bk-form  { display: flex; flex-direction: column; gap: 1rem; }
+.bk-field { display: flex; flex-direction: column; gap: 0.4rem; }
+.bk-field label { font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.7); }
+.bk-field input {
+  border: 1.5px solid rgba(255,255,255,0.12); border-radius: 0.75rem;
+  padding: 0.75rem 1rem; font-size: 0.9rem; outline: none;
+  transition: border-color 0.15s; font-family: inherit;
+  background: rgba(255,255,255,0.06); color: white;
+}
+.bk-field input::placeholder { color: rgba(255,255,255,0.25); }
+.bk-field input:focus { border-color: #83942C; }
+.bk-req { color: #ef4444; }
+.bk-opt { color: rgba(255,255,255,0.3); font-weight: 400; font-size: 0.78rem; }
+
+/* Summary */
+.bk-summary {
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 1rem; padding: 1.25rem; margin-bottom: 1.25rem;
+  display: flex; flex-direction: column; gap: 0.75rem;
+}
+.bk-summary-row {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.875rem; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 0.5rem;
+}
+.bk-summary-row:last-child { border-bottom: none; padding-bottom: 0; }
+.bk-summary-row span   { color: rgba(255,255,255,0.45); }
+.bk-summary-row strong { color: #ffffff; text-align: right; max-width: 60%; }
+
+/* Buttons */
+.bk-btn-primary {
+  width: 100%; padding: 1rem; border-radius: 0.75rem; background: #83942C;
+  color: white; font-weight: 600; font-size: 1rem; border: none;
+  cursor: pointer; transition: background 0.15s; margin-bottom: 0.75rem; font-family: inherit;
+}
+.bk-btn-primary:hover    { background: #9aaa35; }
+.bk-btn-primary:disabled { background: rgba(255,255,255,0.15); cursor: not-allowed; }
+.bk-btn-secondary {
+  padding: 0.75rem 2rem; border-radius: 0.75rem; background: transparent;
+  color: #9aaa35; font-weight: 600; border: 2px solid #83942C;
+  cursor: pointer; transition: all 0.15s; font-family: inherit;
+}
+.bk-btn-secondary:hover { background: rgba(131,148,44,0.12); }
+.bk-back {
+  background: none; border: none; color: rgba(255,255,255,0.4); cursor: pointer;
+  font-size: 0.875rem; padding: 0.5rem 0; display: block; margin: 0.5rem auto 0;
+  font-family: inherit; transition: color 0.15s;
+}
+.bk-back:hover { color: #9aaa35; }
+
+/* Error */
+.bk-error { color: #f87171; font-size: 0.875rem; text-align: center; margin-bottom: 0.5rem; }
+
+/* Success */
+.bk-success { text-align: center; padding: 2rem 1rem; }
+.bk-success-icon { font-size: 3rem; margin-bottom: 1rem; }
+.bk-success h3 {
+  font-family: 'Cormorant Garant', serif; font-size: 1.5rem; font-style: italic;
+  color: #ffffff; margin-bottom: 0.75rem;
+}
+.bk-success p { color: rgba(255,255,255,0.65); margin-bottom: 0.25rem; font-size: 0.95rem; }
+.bk-success-sub { color: rgba(255,255,255,0.35); font-size: 0.8rem; margin-top: 0.5rem; }
+.bk-success a   { color: #9aaa35; }
+.bk-success .bk-btn-secondary { margin-top: 1.5rem; }
+
+@media (max-width: 480px) {
+  .bk-slots-grid { grid-template-columns: repeat(3, 1fr); }
+  .bk-step-label { display: none; }
+  .bk-service-grid { grid-template-columns: 1fr; }
+}
