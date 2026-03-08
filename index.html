@@ -44,16 +44,16 @@
         ΜΟΡΦΕΣ
       </a>
 
-      <div class="hidden md:flex items-center gap-10">
-        <a href="#about"        class="nav-link font-body text-xs tracking-[0.2em] uppercase text-cream/60 hover:text-gold transition-colors" data-i18n="nav.about">Σχετικά</a>
-        <a href="#services"     class="nav-link font-body text-xs tracking-[0.2em] uppercase text-cream/60 hover:text-gold transition-colors" data-i18n="nav.services">Υπηρεσίες</a>
-        <a href="#results"      class="nav-link font-body text-xs tracking-[0.2em] uppercase text-cream/60 hover:text-gold transition-colors" data-i18n="nav.results">Αποτελέσματα</a>
-        <a href="#testimonials" class="nav-link font-body text-xs tracking-[0.2em] uppercase text-cream/60 hover:text-gold transition-colors" data-i18n="nav.reviews">Κριτικές</a>
-        <a href="#booking"      class="nav-link font-body text-xs tracking-[0.2em] uppercase text-cream/60 hover:text-gold transition-colors" data-i18n="nav.booking">Ραντεβού</a>
-        <a href="#fragina"      class="nav-link font-body text-xs tracking-[0.15em] uppercase font-medium transition-colors" style="color:rgba(200,140,255,0.7)">Fragina</a>
-        <a href="#contact"      class="nav-link font-body text-xs tracking-[0.2em] uppercase text-cream/60 hover:text-gold transition-colors" data-i18n="nav.contact">Επικοινωνία</a>
+      <div class="hidden md:flex items-center gap-5">
+        <a href="#about"        class="nav-link font-body text-xs tracking-[0.1em] uppercase text-cream/60 hover:text-gold transition-colors" data-i18n="nav.about">Σχετικά</a>
+        <a href="#services"     class="nav-link font-body text-xs tracking-[0.1em] uppercase text-cream/60 hover:text-gold transition-colors" data-i18n="nav.services">Υπηρεσίες</a>
+        <a href="#results"      class="nav-link font-body text-xs tracking-[0.1em] uppercase text-cream/60 hover:text-gold transition-colors" data-i18n="nav.results">Αποτελέσματα</a>
+        <a href="#testimonials" class="nav-link font-body text-xs tracking-[0.1em] uppercase text-cream/60 hover:text-gold transition-colors" data-i18n="nav.reviews">Κριτικές</a>
+        <a href="#booking"      class="nav-link font-body text-xs tracking-[0.1em] uppercase text-cream/60 hover:text-gold transition-colors" data-i18n="nav.booking">Ραντεβού</a>
+        <a href="#fragina"      class="nav-link font-body text-xs tracking-[0.1em] uppercase font-medium transition-colors" style="color:rgba(200,140,255,0.7)">Fragina</a>
+        <a href="#contact"      class="nav-link font-body text-xs tracking-[0.1em] uppercase text-cream/60 hover:text-gold transition-colors" data-i18n="nav.contact">Επικοινωνία</a>
         <a href="tel:2310836982"
-           class="font-body text-xs tracking-[0.15em] uppercase font-medium px-6 py-2.5 border border-gold text-gold hover:bg-gold hover:text-white transition-all duration-300">
+           class="whitespace-nowrap font-body text-xs tracking-[0.08em] uppercase font-medium px-4 py-2.5 border border-gold text-gold hover:bg-gold hover:text-white transition-all duration-300">
           231 083 6982
         </a>
         <!-- Language switcher -->
@@ -384,41 +384,55 @@
       <h2 class="font-display text-5xl lg:text-6xl font-light italic text-cream" data-i18n="gallery.title">Αποτελέσματα</h2>
     </div>
 
-    <!-- Photo grid -->
-    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
-
-      <div class="reveal gallery-item overflow-hidden aspect-square cursor-pointer" data-src="photos/beforeafter.jpg">
-        <img src="photos/beforeafter.jpg" alt="Μορφές – πριν και μετά" class="w-full h-full object-cover gallery-img" loading="lazy" />
+    <!-- Sub-section: Before & After -->
+    <div class="mb-14">
+      <div class="flex items-center gap-4 mb-6 reveal">
+        <span class="h-px w-6 bg-gold/40"></span>
+        <span class="font-body text-xs tracking-[0.3em] uppercase text-gold/60">Πριν &amp; Μετά</span>
       </div>
-
-      <div class="reveal reveal-d1 gallery-item overflow-hidden aspect-square cursor-pointer" data-src="photos/beforeafter1.jpg">
-        <img src="photos/beforeafter1.jpg" alt="Μορφές – μεταμόρφωση 1" class="w-full h-full object-cover gallery-img" loading="lazy" />
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+        <div class="reveal gallery-item overflow-hidden aspect-square cursor-pointer" data-src="photos/beforeafter.jpg">
+          <img src="photos/beforeafter.jpg" alt="Μορφές – πριν και μετά" class="w-full h-full object-cover gallery-img" loading="lazy" />
+        </div>
+        <div class="reveal reveal-d1 gallery-item overflow-hidden aspect-square cursor-pointer" data-src="photos/beforeafter1.jpg">
+          <img src="photos/beforeafter1.jpg" alt="Μορφές – μεταμόρφωση 1" class="w-full h-full object-cover gallery-img" loading="lazy" />
+        </div>
+        <div class="reveal reveal-d2 gallery-item overflow-hidden aspect-square cursor-pointer" data-src="photos/beforeafter2.jpg">
+          <img src="photos/beforeafter2.jpg" alt="Μορφές – μεταμόρφωση 2" class="w-full h-full object-cover gallery-img" loading="lazy" />
+        </div>
+        <div class="reveal reveal-d3 gallery-item overflow-hidden aspect-square cursor-pointer" data-src="photos/beforeafter3.jpg">
+          <img src="photos/beforeafter3.jpg" alt="Μορφές – μεταμόρφωση 3" class="w-full h-full object-cover gallery-img" loading="lazy" />
+        </div>
       </div>
+    </div>
 
-      <div class="reveal reveal-d2 gallery-item overflow-hidden aspect-square cursor-pointer" data-src="photos/beforeafter2.jpg">
-        <img src="photos/beforeafter2.jpg" alt="Μορφές – μεταμόρφωση 2" class="w-full h-full object-cover gallery-img" loading="lazy" />
+    <!-- Divider -->
+    <div class="flex items-center gap-4 mb-10 reveal">
+      <div class="flex-1 h-px bg-gold/10"></div>
+      <div class="w-1.5 h-1.5 bg-gold/30 rotate-45 shrink-0"></div>
+      <div class="flex-1 h-px bg-gold/10"></div>
+    </div>
+
+    <!-- Sub-section: Results -->
+    <div>
+      <div class="flex items-center gap-4 mb-6 reveal">
+        <span class="h-px w-6 bg-gold/40"></span>
+        <span class="font-body text-xs tracking-[0.3em] uppercase text-gold/60">Εργασίες μας</span>
       </div>
-
-      <div class="reveal gallery-item overflow-hidden aspect-square cursor-pointer" data-src="photos/seetheresults.jpg">
-        <img src="photos/seetheresults.jpg" alt="Μορφές – αποτέλεσμα" class="w-full h-full object-cover gallery-img" loading="lazy" />
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+        <div class="reveal gallery-item overflow-hidden aspect-square cursor-pointer" data-src="photos/seetheresults.jpg">
+          <img src="photos/seetheresults.jpg" alt="Μορφές – αποτέλεσμα" class="w-full h-full object-cover gallery-img" loading="lazy" />
+        </div>
+        <div class="reveal reveal-d1 gallery-item overflow-hidden aspect-square cursor-pointer" data-src="photos/seetheresults2.jpg">
+          <img src="photos/seetheresults2.jpg" alt="Μορφές – αποτέλεσμα 2" class="w-full h-full object-cover gallery-img" loading="lazy" />
+        </div>
+        <div class="reveal reveal-d2 gallery-item overflow-hidden aspect-square cursor-pointer" data-src="photos/2024-08-11.jpg">
+          <img src="photos/2024-08-11.jpg" alt="Μορφές – εργασία 2024" class="w-full h-full object-cover gallery-img" loading="lazy" />
+        </div>
+        <div class="reveal reveal-d3 gallery-item overflow-hidden aspect-square cursor-pointer" data-src="photos/2025-07-14.jpg">
+          <img src="photos/2025-07-14.jpg" alt="Μορφές – εργασία 2025" class="w-full h-full object-cover gallery-img" loading="lazy" />
+        </div>
       </div>
-
-      <div class="reveal reveal-d1 gallery-item overflow-hidden aspect-square cursor-pointer" data-src="photos/seetheresults2.jpg">
-        <img src="photos/seetheresults2.jpg" alt="Μορφές – αποτέλεσμα 2" class="w-full h-full object-cover gallery-img" loading="lazy" />
-      </div>
-
-      <div class="reveal reveal-d2 gallery-item overflow-hidden aspect-square cursor-pointer" data-src="photos/beforeafter3.jpg">
-        <img src="photos/beforeafter3.jpg" alt="Μορφές – μεταμόρφωση 3" class="w-full h-full object-cover gallery-img" loading="lazy" />
-      </div>
-
-      <div class="reveal gallery-item overflow-hidden aspect-square cursor-pointer" data-src="photos/2024-08-11.jpg">
-        <img src="photos/2024-08-11.jpg" alt="Μορφές – εργασία 2024" class="w-full h-full object-cover gallery-img" loading="lazy" />
-      </div>
-
-      <div class="reveal reveal-d1 gallery-item overflow-hidden aspect-square cursor-pointer" data-src="photos/2025-07-14.jpg">
-        <img src="photos/2025-07-14.jpg" alt="Μορφές – εργασία 2025" class="w-full h-full object-cover gallery-img" loading="lazy" />
-      </div>
-
     </div>
 
     <!-- Lightbox -->
