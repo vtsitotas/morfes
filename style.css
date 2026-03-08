@@ -38,7 +38,7 @@ section[id] { scroll-margin-top: 5rem; }
   overflow: hidden;
   transition: max-height 0.35s ease;
 }
-.mobile-menu-wrap.open { max-height: 24rem; }
+.mobile-menu-wrap.open { max-height: 36rem; }
 
 /* Hamburger open state */
 #hamburger.open .ham-1 { transform: translateY(6px) rotate(45deg); }

@@ -156,7 +156,7 @@
   </p>
 
   <!-- Scroll hint -->
-  <div class="scroll-hint absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3">
+  <div class="scroll-hint absolute bottom-10 left-0 right-0 flex flex-col items-center gap-3">
     <span class="font-body text-[10px] tracking-[0.4em] uppercase" style="color: rgba(55,66,49,0.3);">Scroll</span>
     <div class="w-px h-10 bg-gradient-to-b from-gold/50 to-transparent"></div>
   </div>
@@ -285,7 +285,7 @@
 <section id="services" class="about-bg py-28 lg:py-36 px-6">
   <div class="max-w-5xl mx-auto">
 
-    <div class="mb-16 lg:mb-20 reveal">
+    <div class="mb-8 lg:mb-10 reveal">
       <div class="flex items-center gap-4 mb-6">
         <span class="h-px w-8 bg-gold/40"></span>
         <span class="font-body text-xs tracking-[0.35em] uppercase about-accent" data-i18n="svc.eyebrow">Τι προσφέρουμε</span>
@@ -438,12 +438,10 @@
     <div class="text-center mb-16 reveal">
       <div class="flex items-center justify-center gap-4 mb-6">
         <span class="h-px w-8 bg-gold/35"></span>
-        <span class="font-body text-xs tracking-[0.35em] uppercase testi-accent" data-i18n="testi.eyebrow">Τι λένε</span>
+        <span class="font-body text-xs tracking-[0.35em] uppercase testi-accent" data-i18n="testi.eyebrow">Τι λένε οι πελάτες μας</span>
         <span class="h-px w-8 bg-gold/35"></span>
       </div>
-      <h2 class="font-display text-5xl lg:text-6xl font-light italic testi-heading mb-6">
-        <span data-i18n="testi.title1">οι πελάτες</span>&nbsp;<span data-i18n="testi.title2">μας</span>
-      </h2>
+      <h2 class="font-display text-5xl lg:text-6xl font-light italic testi-heading mb-6" data-i18n="testi.heading">Κριτικές</h2>
       <div class="inline-flex items-center gap-3 border border-gold/20 px-6 py-2.5">
         <span class="stars text-sm">★★★★★</span>
         <span class="font-body font-medium testi-heading text-sm">4.9</span>
@@ -954,6 +952,22 @@
 /* ── Faster reveals + testi stagger ── */
 .reveal{transition:opacity 0.5s ease,transform 0.5s ease;}
 .testi-card{transition-duration:0.65s;}
+
+/* ── Hide cursor on touch devices ── */
+@media(hover:none),(pointer:coarse){
+  .fin-dot,.fin-ring{display:none!important;}
+}
+
+/* ── Mobile lang buttons more visible ── */
+@media(max-width:767px){
+  .lang-btn{
+    color:rgba(255,255,255,0.7);
+    border-color:rgba(131,148,44,0.6);
+    font-size:0.7rem;
+    padding:0.4rem 0;
+  }
+  .lang-btn.active{background:#83942C;border-color:#83942C;color:#fff;}
+}
 </style>
 
 <script>
