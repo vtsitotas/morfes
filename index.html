@@ -875,5 +875,222 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="booking.js"></script>
 <script src="i18n.js"></script>
+
+<!-- ═══════════════════════════════════════ FINAL ANIMATIONS -->
+<style>
+/* ── Preloader ── */
+#fin-loader{
+  position:fixed;inset:0;background:#252E1E;z-index:10000;
+  display:flex;align-items:center;justify-content:center;
+  transition:opacity 0.7s ease;
+}
+#fin-loader img{width:220px;animation:fin-logo-in 0.9s cubic-bezier(0.22,1,0.36,1) forwards;}
+@keyframes fin-logo-in{from{opacity:0;transform:scale(0.85)}to{opacity:1;transform:scale(1)}}
+
+/* ── Scroll progress bar ── */
+#fin-bar{
+  position:fixed;top:0;left:0;height:3px;background:#83942C;
+  z-index:9999;width:0%;transition:width 0.1s linear;
+}
+
+/* ── Cursor ── */
+.fin-dot{
+  position:fixed;width:7px;height:7px;background:#83942C;border-radius:50%;
+  pointer-events:none;z-index:9999;left:-20px;top:-20px;
+  transform:translate(-50%,-50%);
+}
+.fin-ring{
+  position:fixed;width:34px;height:34px;
+  border:1.5px solid rgba(131,148,44,0.6);border-radius:50%;
+  pointer-events:none;z-index:9998;left:-20px;top:-20px;
+  transform:translate(-50%,-50%);
+  transition:width 0.35s ease,height 0.35s ease,border-color 0.35s ease;
+  mix-blend-mode:multiply;
+}
+.fin-ring.hover{width:54px;height:54px;border-color:#83942C;}
+
+/* ── Nav underline draw ── */
+.nav-link{position:relative;}
+.nav-link::after{
+  content:'';position:absolute;bottom:-3px;left:0;
+  width:0;height:1px;background:#83942C;
+  transition:width 0.35s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+.nav-link:hover::after{width:100%;}
+
+/* ── Hero entrance ── */
+@keyframes fin-hero-in{
+  from{opacity:0;transform:scale(1.06) translateY(16px);filter:blur(10px);}
+  to  {opacity:1;transform:scale(1)    translateY(0);   filter:blur(0);}
+}
+.hero-title{animation:fin-hero-in 1.3s cubic-bezier(0.22,1,0.36,1) 0.3s both;}
+
+/* ── Hero logo float (starts after entrance) ── */
+@keyframes fin-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-11px)}}
+
+/* ── Clip-path h2 wipe ── */
+.fin-wipe{
+  clip-path:inset(0 100% 0 0);
+  transition:clip-path 0.95s cubic-bezier(0.77,0,0.175,1) 0.1s;
+}
+.fin-wipe.visible{clip-path:inset(0 0% 0 0);}
+
+/* ── Service rows slide from left ── */
+.service-row{opacity:0;transform:translateX(-28px);transition:opacity 0.55s ease,transform 0.55s ease;}
+.service-row.visible{opacity:1;transform:translateX(0);}
+
+/* ── Fragina beam ── */
+@keyframes fin-sweep{
+  from{transform:translateX(-120%) skewX(-15deg);}
+  to  {transform:translateX(360%)  skewX(-15deg);}
+}
+#fin-sweep{
+  position:absolute;top:0;left:0;width:35%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(180,0,255,0.18),transparent);
+  pointer-events:none;z-index:2;opacity:0;
+}
+#fin-sweep.go{opacity:1;animation:fin-sweep 1.4s ease forwards;}
+
+/* ── Faster reveals + testi stagger ── */
+.reveal{transition:opacity 0.5s ease,transform 0.5s ease;}
+.testi-card{transition-duration:0.65s;}
+</style>
+
+<script>
+(function(){
+
+  /* ── Preloader ── */
+  var pl=document.createElement('div');pl.id='fin-loader';
+  var pi=document.createElement('img');pi.src='photos/logotransparent.png';pi.alt='Μορφές';
+  pl.appendChild(pi);document.body.appendChild(pl);
+  window.addEventListener('load',function(){
+    setTimeout(function(){
+      pl.style.opacity='0';
+      setTimeout(function(){if(pl.parentNode)pl.parentNode.removeChild(pl);},700);
+    },1500);
+  });
+
+  /* ── Scroll progress bar ── */
+  var bar=document.createElement('div');bar.id='fin-bar';
+  document.body.appendChild(bar);
+  window.addEventListener('scroll',function(){
+    var p=window.scrollY/(document.documentElement.scrollHeight-window.innerHeight)*100;
+    bar.style.width=Math.min(p,100)+'%';
+  });
+
+  /* ── Custom cursor ── */
+  var dot=document.createElement('div');dot.className='fin-dot';
+  var ring=document.createElement('div');ring.className='fin-ring';
+  document.body.appendChild(dot);document.body.appendChild(ring);
+  var mx=window.innerWidth/2,my=window.innerHeight/2,rx=mx,ry=my;
+  document.addEventListener('mousemove',function(e){
+    mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';
+  });
+  (function anim(){
+    rx+=(mx-rx)*0.12;ry+=(my-ry)*0.12;
+    ring.style.left=rx+'px';ring.style.top=ry+'px';
+    requestAnimationFrame(anim);
+  })();
+  document.querySelectorAll('a,button').forEach(function(el){
+    el.addEventListener('mouseenter',function(){ring.classList.add('hover');});
+    el.addEventListener('mouseleave',function(){ring.classList.remove('hover');});
+  });
+
+  /* ── Hero logo: float after entrance finishes ── */
+  var logo=document.querySelector('.hero-title img');
+  if(logo){
+    setTimeout(function(){
+      logo.style.animation='fin-float 5s ease-in-out infinite';
+    },1650);
+  }
+
+  /* ── Magnetic CTA buttons ── */
+  document.querySelectorAll('a').forEach(function(btn){
+    if(!btn.className.includes('bg-gold'))return;
+    btn.addEventListener('mousemove',function(e){
+      var r=btn.getBoundingClientRect();
+      var x=(e.clientX-r.left-r.width/2)*0.22;
+      var y=(e.clientY-r.top-r.height/2)*0.22;
+      btn.style.transform='translate('+x+'px,'+y+'px)';
+      btn.style.transition='transform 0.08s ease';
+    });
+    btn.addEventListener('mouseleave',function(){
+      btn.style.transform='';btn.style.transition='transform 0.5s ease';
+    });
+  });
+
+  /* ── Clip-path wipe on h2 headings ── */
+  var wObs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('visible');wObs.unobserve(e.target);}
+    });
+  },{threshold:0.2});
+  document.querySelectorAll('h2').forEach(function(h){
+    h.classList.add('fin-wipe');wObs.observe(h);
+  });
+
+  /* ── Typewriter hero subtitle (after i18n + entrance) ── */
+  setTimeout(function(){
+    var sub=document.querySelector('.hero-sub');
+    if(!sub)return;
+    var text=sub.textContent.trim();
+    sub.textContent='';
+    var i=0;
+    var t=setInterval(function(){
+      sub.textContent+=text[i];i++;
+      if(i>=text.length)clearInterval(t);
+    },52);
+  },1200);
+
+  /* ── Count-up stats ── */
+  function countUp(el,end,dec,suf){
+    var v=0,inc=end/(1600/16);
+    var t=setInterval(function(){
+      v=Math.min(v+inc,end);
+      el.textContent=(dec?v.toFixed(dec):Math.floor(v))+suf;
+      if(v>=end)clearInterval(t);
+    },16);
+  }
+  var cObs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting)return;
+      cObs.unobserve(e.target);
+      var boxes=document.querySelectorAll('.about-stat-box .text-gold');
+      if(boxes[0])countUp(boxes[0],4.9,1,'★');
+      if(boxes[1])countUp(boxes[1],2,0,'');
+    });
+  },{threshold:0.6});
+  var fs=document.querySelector('.about-stat-box');
+  if(fs)cObs.observe(fs);
+
+  /* ── Service rows slide from left ── */
+  var sObs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting)return;
+      sObs.unobserve(e.target);e.target.classList.add('visible');
+    });
+  },{threshold:0.15});
+  document.querySelectorAll('.service-row').forEach(function(el,i){
+    el.style.transitionDelay=(i*0.1)+'s';sObs.observe(el);
+  });
+
+  /* ── Fragina beam sweep ── */
+  var fragSec=document.getElementById('fragina');
+  if(fragSec){
+    var beam=document.createElement('div');beam.id='fin-sweep';
+    fragSec.style.position='relative';fragSec.appendChild(beam);
+    var fObs=new IntersectionObserver(function(entries){
+      if(entries[0].isIntersecting){beam.classList.add('go');fObs.disconnect();}
+    },{threshold:0.3});
+    fObs.observe(fragSec);
+  }
+
+  /* ── Testimonial cascade delays ── */
+  document.querySelectorAll('.testi-card').forEach(function(el,i){
+    el.style.transitionDelay=(i*0.08)+'s';
+  });
+
+})();
+</script>
 </body>
 </html>
