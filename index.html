@@ -96,44 +96,28 @@
 <!-- ═══════════════════════════════════════ HERO -->
 <section id="hero" class="hero-section relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
 
-  <!-- Interior photo background (dimmed) -->
-  <div class="absolute inset-0 bg-cover bg-center bg-no-repeat"
-       style="background-image: url('photos/inside2.jpg');"
-       role="img" aria-label="Εσωτερικό Μορφές κομμωτήριο"></div>
+  <!-- White background -->
+  <div class="absolute inset-0" style="background: #ffffff;"></div>
 
-  <!-- Dark green overlay -->
-  <div class="absolute inset-0" style="background: rgba(37, 46, 30, 0.70);"></div>
-  <div class="hero-noise absolute inset-0"></div>
-
-  <!-- Subtle golden radial glow -->
-  <div class="absolute inset-0" style="background: radial-gradient(ellipse 65% 50% at 50% 40%, rgba(131,148,44,0.12) 0%, transparent 65%);"></div>
-
-  <!-- Decorative grid lines -->
-  <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-    <div class="absolute top-[22%] left-0 right-0 h-px bg-white/[0.04]"></div>
-    <div class="absolute top-[78%] left-0 right-0 h-px bg-white/[0.04]"></div>
-    <div class="absolute left-[8%] top-0 bottom-0 w-px bg-white/[0.04]"></div>
-    <div class="absolute right-[8%] top-0 bottom-0 w-px bg-white/[0.04]"></div>
-  </div>
+  <!-- Subtle olive radial glow -->
+  <div class="absolute inset-0" style="background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(131,148,44,0.07) 0%, transparent 70%);"></div>
 
   <!-- Content -->
   <div class="relative z-10 text-center px-6 max-w-6xl mx-auto">
 
     <!-- Rating badge -->
-    <div class="hero-eyebrow inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/15 px-5 py-2 mb-8">
+    <div class="hero-eyebrow inline-flex items-center gap-3 px-5 py-2 mb-8" style="background: rgba(131,148,44,0.08); border: 1px solid rgba(131,148,44,0.25);">
       <span class="stars text-sm">★★★★★</span>
-      <span class="font-body text-white/80 text-xs tracking-wide" data-i18n="hero.reviews">4.9 · 383 κριτικές Google</span>
+      <span class="font-body text-xs tracking-wide" style="color: rgba(55,66,49,0.7);" data-i18n="hero.reviews">4.9 · 383 κριτικές Google</span>
     </div>
 
     <!-- Main title / logo -->
-    <div class="hero-title mb-5 flex items-center justify-center">
-      <div style="background: rgba(255,255,255,0.92); backdrop-filter: blur(6px); padding: 2rem 3.5rem; border-radius: 4px;">
-        <img src="photos/logotransparent.png" alt="Μορφές" class="w-auto max-w-xs sm:max-w-sm md:max-w-md" style="max-height: 160px; object-fit: contain;" />
-      </div>
+    <div class="hero-title mb-6 flex items-center justify-center">
+      <img src="photos/logotransparent.png" alt="Μορφές" style="width: min(80vw, 600px); height: auto; object-fit: contain;" />
     </div>
 
     <!-- Subtitle -->
-    <p class="hero-sub font-body text-xs sm:text-sm tracking-[0.5em] uppercase text-cream/50 mb-10" data-i18n="hero.subtitle">
+    <p class="hero-sub font-body text-xs sm:text-sm tracking-[0.5em] uppercase mb-10" style="color: rgba(55,66,49,0.55);" data-i18n="hero.subtitle">
       Κομμωτήριο &amp; Barbershop
     </p>
 
@@ -152,14 +136,15 @@
         📞 Κλείστε Ραντεβού
       </a>
       <a href="#services"
-         class="font-body font-medium tracking-[0.15em] uppercase text-sm px-10 py-4 border border-white/25 text-white/60 hover:border-gold hover:text-gold transition-all duration-300"
+         class="font-body font-medium tracking-[0.15em] uppercase text-sm px-10 py-4 hover:text-gold transition-all duration-300"
+         style="border: 1px solid rgba(55,66,49,0.25); color: rgba(55,66,49,0.6);"
          data-i18n="hero.cta2">
         Υπηρεσίες ↓
       </a>
     </div>
 
     <!-- Address chip -->
-    <p class="hero-sub font-body text-xs text-cream/35 tracking-widest mt-8 uppercase" data-i18n="hero.address">
+    <p class="hero-sub font-body text-xs tracking-widest mt-8 uppercase" style="color: rgba(55,66,49,0.4);" data-i18n="hero.address">
       Δελφών 95 · Θεσσαλονίκη 546 44
     </p>
 
@@ -172,7 +157,7 @@
 
   <!-- Scroll hint -->
   <div class="scroll-hint absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3">
-    <span class="font-body text-[10px] tracking-[0.4em] uppercase text-cream/25">Scroll</span>
+    <span class="font-body text-[10px] tracking-[0.4em] uppercase" style="color: rgba(55,66,49,0.3);">Scroll</span>
     <div class="w-px h-10 bg-gradient-to-b from-gold/50 to-transparent"></div>
   </div>
 
