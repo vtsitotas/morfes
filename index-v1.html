@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Μορφές – Κομμωτήριο & Barbershop, Δελφών 95, Θεσσαλονίκη. 4.9★ (383 κριτικές). Τηλ: 231 083 6982." />
+  <title>Μορφές | Κομμωτήριο & Barbershop Θεσσαλονίκη</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: '#83942C',
+            'gold-light': '#9aaa35',
+            cream: '#FFFFFF',
+            'cream-alt': '#F2F4E6',
+          },
+          fontFamily: {
+            display: ['"Cormorant Garant"', 'Georgia', 'serif'],
+            body: ['Outfit', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="booking.css" />
+</head>
+<body class="antialiased">
+
+<!-- ═══════════════════════════════════════ NAV -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <div class="flex items-center justify-between h-20">
+
+      <a href="#hero" class="font-display text-xl font-light tracking-[0.3em] text-cream hover:text-gold transition-colors duration-300">
+        ΜΟΡΦΕΣ
+      </a>
+
+      <div class="hidden md:flex items-center gap-5">
+        <a href="#about"        class="nav-link font-body text-xs tracking-[0.1em] uppercase text-cream/60 hover:text-gold transition-colors" data-i18n="nav.about">Σχετικά</a>
+        <a href="#services"     class="nav-link font-body text-xs tracking-[0.1em] uppercase text-cream/60 hover:text-gold transition-colors" data-i18n="nav.services">Υπηρεσίες</a>
+        <a href="#results"      class="nav-link font-body text-xs tracking-[0.1em] uppercase text-cream/60 hover:text-gold transition-colors" data-i18n="nav.results">Αποτελέσματα</a>
+        <a href="#testimonials" class="nav-link font-body text-xs tracking-[0.1em] uppercase text-cream/60 hover:text-gold transition-colors" data-i18n="nav.reviews">Κριτικές</a>
+        <a href="#booking"      class="nav-link font-body text-xs tracking-[0.1em] uppercase text-cream/60 hover:text-gold transition-colors" data-i18n="nav.booking">Ραντεβού</a>
+        <a href="#fragina"      class="nav-link font-body text-xs tracking-[0.1em] uppercase font-medium transition-colors" style="color:rgba(200,140,255,0.7)">Fragina</a>
+        <a href="#contact"      class="nav-link font-body text-xs tracking-[0.1em] uppercase text-cream/60 hover:text-gold transition-colors" data-i18n="nav.contact">Επικοινωνία</a>
+        <a href="tel:2310836982"
+           class="whitespace-nowrap font-body text-xs tracking-[0.08em] uppercase font-medium px-4 py-2.5 border border-gold text-gold hover:bg-gold hover:text-white transition-all duration-300">
+          231 083 6982
+        </a>
+        <!-- Language switcher -->
+        <div class="flex items-center gap-1">
+          <button class="lang-btn" data-lang="el">ΕΛ</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+      </div>
+
+      <button id="hamburger" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Μενού">
+        <span class="ham-1 block w-6 h-px bg-cream/80 transition-all duration-300 origin-center"></span>
+        <span class="ham-2 block w-4 h-px bg-gold transition-all duration-300"></span>
+        <span class="ham-3 block w-6 h-px bg-cream/80 transition-all duration-300 origin-center"></span>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="mobile-menu-wrap md:hidden">
+    <div class="bg-[#2E3B29] border-t border-gold/20 px-6 py-6 flex flex-col gap-1">
+      <a href="#about"        class="mobile-nav-link font-body py-3 text-sm tracking-[0.2em] uppercase text-cream/60 hover:text-gold transition-colors border-b border-white/5" data-i18n="nav.about">Σχετικά</a>
+      <a href="#services"     class="mobile-nav-link font-body py-3 text-sm tracking-[0.2em] uppercase text-cream/60 hover:text-gold transition-colors border-b border-white/5" data-i18n="nav.services">Υπηρεσίες</a>
+      <a href="#results"      class="mobile-nav-link font-body py-3 text-sm tracking-[0.2em] uppercase text-cream/60 hover:text-gold transition-colors border-b border-white/5" data-i18n="nav.results">Αποτελέσματα</a>
+      <a href="#testimonials" class="mobile-nav-link font-body py-3 text-sm tracking-[0.2em] uppercase text-cream/60 hover:text-gold transition-colors border-b border-white/5" data-i18n="nav.reviews">Κριτικές</a>
+      <a href="#booking"      class="mobile-nav-link font-body py-3 text-sm tracking-[0.2em] uppercase text-cream/60 hover:text-gold transition-colors border-b border-white/5" data-i18n="nav.booking">Ραντεβού</a>
+      <a href="#fragina"      class="mobile-nav-link font-body py-3 text-sm tracking-[0.2em] uppercase border-b border-white/5 transition-colors" style="color:rgba(200,140,255,0.7)">Fragina</a>
+      <a href="#contact"      class="mobile-nav-link font-body py-3 text-sm tracking-[0.2em] uppercase text-cream/60 hover:text-gold transition-colors border-b border-white/5" data-i18n="nav.contact">Επικοινωνία</a>
+      <a href="tel:2310836982"
+         class="mt-4 font-body text-center text-sm tracking-[0.15em] uppercase font-medium py-3 border border-gold text-gold hover:bg-gold hover:text-white transition-all duration-300">
+        📞 231 083 6982
+      </a>
+      <!-- Language switcher mobile -->
+      <div class="flex items-center gap-2 mt-3">
+        <button class="lang-btn flex-1 py-2" data-lang="el">ΕΛ</button>
+        <button class="lang-btn flex-1 py-2" data-lang="en">EN</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════ HERO -->
+<section id="hero" class="hero-section relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+
+  <!-- Light green background -->
+  <div class="absolute inset-0" style="background: #dde8cc;"></div>
+
+  <!-- Subtle olive radial glow -->
+  <div class="absolute inset-0" style="background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(131,148,44,0.12) 0%, transparent 70%);"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 text-center px-6 max-w-6xl mx-auto">
+
+    <!-- Rating badge -->
+    <div class="hero-eyebrow inline-flex items-center gap-3 px-5 py-2 mb-8" style="background: rgba(131,148,44,0.08); border: 1px solid rgba(131,148,44,0.25);">
+      <span class="stars text-sm">★★★★★</span>
+      <span class="font-body text-xs tracking-wide" style="color: rgba(55,66,49,0.7);" data-i18n="hero.reviews">4.9 · 383 κριτικές Google</span>
+    </div>
+
+    <!-- Main title / logo -->
+    <div class="hero-title mb-6 flex items-center justify-center">
+      <img src="photos/logotransparent.png" alt="Μορφές" style="width: min(80vw, 600px); height: auto; object-fit: contain;" />
+    </div>
+
+    <!-- Subtitle -->
+    <p class="hero-sub font-body text-xs sm:text-sm tracking-[0.5em] uppercase mb-10" style="color: rgba(55,66,49,0.55);" data-i18n="hero.subtitle">
+      Κομμωτήριο &amp; Barbershop
+    </p>
+
+    <!-- Divider -->
+    <div class="hero-divider flex items-center justify-center gap-3 mb-12">
+      <div class="h-px w-16 bg-gold/50"></div>
+      <div class="w-1.5 h-1.5 bg-gold/50 rotate-45 shrink-0"></div>
+      <div class="h-px w-16 bg-gold/50"></div>
+    </div>
+
+    <!-- CTAs -->
+    <div class="hero-ctas flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="tel:2310836982"
+         class="font-body font-medium tracking-[0.15em] uppercase text-sm px-10 py-4 bg-gold text-white hover:bg-gold-light transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0"
+         data-i18n="hero.cta1">
+        📞 Κλείστε Ραντεβού
+      </a>
+      <a href="#services"
+         class="font-body font-medium tracking-[0.15em] uppercase text-sm px-10 py-4 hover:text-gold transition-all duration-300"
+         style="border: 1px solid rgba(55,66,49,0.25); color: rgba(55,66,49,0.6);"
+         data-i18n="hero.cta2">
+        Υπηρεσίες ↓
+      </a>
+    </div>
+
+    <!-- Address chip -->
+    <p class="hero-sub font-body text-xs tracking-widest mt-8 uppercase" style="color: rgba(55,66,49,0.4);" data-i18n="hero.address">
+      Δελφών 95 · Θεσσαλονίκη 546 44
+    </p>
+
+  </div>
+
+  <!-- Vertical side text -->
+  <p class="vertical-label absolute right-8 top-1/2 -translate-y-1/2 hidden xl:block font-body text-[10px] tracking-[0.5em] uppercase text-cream/15" data-i18n="hero.side">
+    Κομμωτήριο · Barbershop · Θεσσαλονίκη
+  </p>
+
+  <!-- Scroll hint -->
+  <div class="scroll-hint absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3">
+    <span class="font-body text-[10px] tracking-[0.4em] uppercase" style="color: rgba(55,66,49,0.3);">Scroll</span>
+    <div class="w-px h-10 bg-gradient-to-b from-gold/50 to-transparent"></div>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════ ABOUT -->
+<section id="about" class="about-bg py-28 lg:py-40 px-6">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid lg:grid-cols-2 gap-16 lg:gap-28 items-center">
+
+      <!-- Image: exterior -->
+      <div class="relative reveal">
+        <div class="absolute -inset-3 border border-gold/15 pointer-events-none"></div>
+        <div class="overflow-hidden aspect-[4/5]">
+          <img src="photos/out.jpg"
+               alt="Μορφές κομμωτήριο εξωτερικό, Δελφών 95 Θεσσαλονίκη"
+               class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+               loading="lazy" />
+          <div class="absolute top-5 left-5 w-10 h-10 border-t-2 border-l-2 border-gold/50 pointer-events-none"></div>
+          <div class="absolute bottom-5 right-5 w-10 h-10 border-b-2 border-r-2 border-gold/50 pointer-events-none"></div>
+        </div>
+      </div>
+
+      <!-- Text -->
+      <div class="space-y-7">
+
+        <div class="reveal flex items-center gap-4">
+          <span class="h-px w-8 bg-gold/40"></span>
+          <span class="font-body text-xs tracking-[0.35em] uppercase about-accent" data-i18n="about.eyebrow">Το κομμωτήριό μας</span>
+        </div>
+
+        <h2 class="reveal font-display text-5xl lg:text-6xl font-light italic about-heading leading-tight">
+          <span data-i18n="about.title.l1">Τέχνη</span><br>
+          <span data-i18n="about.title.l2">και στυλ μαζί</span>
+        </h2>
+
+        <div class="reveal w-10 h-px bg-gold/40"></div>
+
+        <p class="reveal font-body about-body leading-relaxed" data-i18n="about.p1">
+          Το Μορφές είναι κομμωτήριο ανδρών-γυναικών και barbershop στην καρδιά της Θεσσαλονίκης, στην οδό Δελφών 95. Ο Γιάννης και η Δέσποινα φροντίζουν κάθε πελάτη με επαγγελματισμό, αφοσίωση και χαμόγελο.
+        </p>
+        <p class="reveal font-body about-body leading-relaxed" data-i18n="about.p2">
+          Από το κλασικό κούρεμα και τη βαφή έως το ξύρισμα, τις πλεξούδες και το Face Spa — κάθε υπηρεσία εκτελείται με γνώση και πάθος για το τέλειο αποτέλεσμα.
+        </p>
+
+        <!-- Stats -->
+        <div class="reveal grid grid-cols-2 gap-4 pt-2">
+          <div class="about-stat-box p-5 border border-gold/20">
+            <p class="font-display text-4xl font-light italic text-gold">4.9★</p>
+            <p class="font-body text-[10px] tracking-[0.2em] uppercase about-muted mt-1" data-i18n="about.stat1">383 κριτικές Google</p>
+          </div>
+          <div class="about-stat-box p-5 border border-gold/20">
+            <p class="font-display text-4xl font-light italic text-gold">2</p>
+            <p class="font-body text-[10px] tracking-[0.2em] uppercase about-muted mt-1">Γιάννης &amp; Δέσποινα</p>
+          </div>
+        </div>
+
+        <!-- Info chips -->
+        <div class="reveal flex flex-wrap gap-3">
+          <span class="font-body text-xs about-chip border border-[#d4c9b8] rounded-full px-4 py-2" data-i18n="about.chip1">📍 Δελφών 95, Θεσσαλονίκη</span>
+          <span class="font-body text-xs about-chip border border-[#d4c9b8] rounded-full px-4 py-2" data-i18n="about.chip2">🕐 09:00–19:00</span>
+          <span class="font-body text-xs about-chip border border-[#d4c9b8] rounded-full px-4 py-2" data-i18n="about.chip3">🌈 LGBTQ+ Friendly</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ TEAM -->
+<section class="services-bg py-20 lg:py-28 px-6">
+  <div class="max-w-4xl mx-auto text-center">
+
+    <div class="reveal flex items-center justify-center gap-4 mb-6">
+      <span class="h-px w-8 bg-gold/60"></span>
+      <span class="font-body text-xs tracking-[0.35em] uppercase text-gold/70" data-i18n="team.eyebrow">Η ομάδα μας</span>
+      <span class="h-px w-8 bg-gold/60"></span>
+    </div>
+
+    <h2 class="reveal font-display text-4xl lg:text-5xl font-light italic text-cream mb-12">
+      Γιάννης &amp; Δέσποινα
+    </h2>
+
+    <div class="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+
+      <!-- Yannis -->
+      <div class="reveal team-card p-8 border border-cream/10 flex flex-col items-center gap-4 text-center">
+        <div class="w-16 h-16 flex items-center justify-center bg-gold/15 text-3xl border border-gold/20">✂️</div>
+        <div>
+          <h3 class="font-display text-2xl font-light italic text-cream mb-1">Γιάννης</h3>
+          <p class="font-body text-xs tracking-[0.2em] uppercase text-gold/70" data-i18n="team.yannis.role">Κομμωτής &amp; Barber</p>
+        </div>
+        <p class="font-body text-sm text-cream/45 leading-relaxed" data-i18n="team.yannis.bio">
+          Εξειδικευμένος στο ανδρικό κούρεμα, ξύρισμα και barbershop styling — αποτελέσματα που σας εντυπωσιάζουν κάθε φορά.
+        </p>
+        <div class="flex flex-wrap justify-center gap-2 mt-1">
+          <span class="font-body text-xs bg-gold/10 text-gold/80 px-3 py-1">Barbershop</span>
+          <span class="font-body text-xs bg-gold/10 text-gold/80 px-3 py-1">Κούρεμα</span>
+          <span class="font-body text-xs bg-gold/10 text-gold/80 px-3 py-1">Ξύρισμα</span>
+        </div>
+      </div>
+
+      <!-- Despoina -->
+      <div class="reveal reveal-d1 team-card p-8 border border-cream/10 flex flex-col items-center gap-4 text-center">
+        <div class="w-16 h-16 flex items-center justify-center bg-gold/15 text-3xl border border-gold/20">💫</div>
+        <div>
+          <h3 class="font-display text-2xl font-light italic text-cream mb-1">Δέσποινα</h3>
+          <p class="font-body text-xs tracking-[0.2em] uppercase text-gold/70" data-i18n="team.desp.role">Κομμώτρια &amp; Stylist</p>
+        </div>
+        <p class="font-body text-sm text-cream/45 leading-relaxed" data-i18n="team.desp.bio">
+          Ειδική σε βαφή, ανταύγειες, χτενίσματα και θεραπείες — φέρνει κάθε ιδέα στη ζωή με ακρίβεια και αγάπη.
+        </p>
+        <div class="flex flex-wrap justify-center gap-2 mt-1">
+          <span class="font-body text-xs bg-gold/10 text-gold/80 px-3 py-1">Βαφή</span>
+          <span class="font-body text-xs bg-gold/10 text-gold/80 px-3 py-1">Styling</span>
+          <span class="font-body text-xs bg-gold/10 text-gold/80 px-3 py-1">Face Spa</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ SERVICES -->
+<section id="services" class="about-bg py-28 lg:py-36 px-6">
+  <div class="max-w-5xl mx-auto">
+
+    <div class="mb-16 lg:mb-20 reveal">
+      <div class="flex items-center gap-4 mb-6">
+        <span class="h-px w-8 bg-gold/40"></span>
+        <span class="font-body text-xs tracking-[0.35em] uppercase about-accent" data-i18n="svc.eyebrow">Τι προσφέρουμε</span>
+      </div>
+      <h2 class="font-display font-light italic about-heading services-title" data-i18n="svc.title">Υπηρεσίες</h2>
+    </div>
+
+    <div class="divide-y" style="border-color: rgba(131,148,44,0.15)">
+
+      <div class="service-row group py-10 sm:py-12 flex items-center gap-6 sm:gap-10 cursor-default relative">
+        <span class="font-display text-xs font-light text-gold/25 group-hover:text-gold transition-colors duration-500 tracking-widest shrink-0 select-none w-5">01</span>
+        <div class="flex-1 min-w-0">
+          <h3 class="font-display text-3xl sm:text-4xl lg:text-5xl font-light italic group-hover:text-gold transition-colors duration-400 mb-2" style="color: rgba(30,38,22,0.65);" onmouseover="this.style.color='#83942C'" onmouseout="this.style.color='rgba(30,38,22,0.65)'" data-i18n="svc.1.name">Κούρεμα</h3>
+          <p class="font-body text-sm leading-relaxed max-w-md" style="color:rgba(61,68,41,0.55)" data-i18n="svc.1.desc">Ανδρικό και γυναικείο κούρεμα με προσοχή στη λεπτομέρεια και το στυλ που σας εκφράζει.</p>
+        </div>
+        <span class="shrink-0 text-transparent group-hover:text-gold transition-all duration-400 text-xl translate-x-3 group-hover:translate-x-0 select-none">→</span>
+        <div class="service-underline-light absolute bottom-0 left-0 h-px bg-gold origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+      </div>
+
+      <div class="service-row group py-10 sm:py-12 flex items-center gap-6 sm:gap-10 cursor-default relative">
+        <span class="font-display text-xs font-light text-gold/25 group-hover:text-gold transition-colors duration-500 tracking-widest shrink-0 select-none w-5">02</span>
+        <div class="flex-1 min-w-0">
+          <h3 class="font-display text-3xl sm:text-4xl lg:text-5xl font-light italic transition-colors duration-400 mb-2" style="color: rgba(30,38,22,0.65);" onmouseover="this.style.color='#83942C'" onmouseout="this.style.color='rgba(30,38,22,0.65)'" data-i18n="svc.2.name">Βαφή &amp; Ανταύγειες</h3>
+          <p class="font-body text-sm leading-relaxed max-w-md" style="color:rgba(61,68,41,0.55)" data-i18n="svc.2.desc">Ολική βαφή, ανταύγειες και διόρθωση χρώματος. Η απόχρωση βγαίνει ακριβώς όπως τη θέλετε.</p>
+        </div>
+        <span class="shrink-0 text-transparent group-hover:text-gold transition-all duration-400 text-xl translate-x-3 group-hover:translate-x-0 select-none">→</span>
+        <div class="service-underline-light absolute bottom-0 left-0 h-px bg-gold origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+      </div>
+
+      <div class="service-row group py-10 sm:py-12 flex items-center gap-6 sm:gap-10 cursor-default relative">
+        <span class="font-display text-xs font-light text-gold/25 group-hover:text-gold transition-colors duration-500 tracking-widest shrink-0 select-none w-5">03</span>
+        <div class="flex-1 min-w-0">
+          <h3 class="font-display text-3xl sm:text-4xl lg:text-5xl font-light italic transition-colors duration-400 mb-2" style="color: rgba(30,38,22,0.65);" onmouseover="this.style.color='#83942C'" onmouseout="this.style.color='rgba(30,38,22,0.65)'" data-i18n="svc.3.name">Barbershop</h3>
+          <p class="font-body text-sm leading-relaxed max-w-md" style="color:rgba(61,68,41,0.55)" data-i18n="svc.3.desc">Κλασικό ξύρισμα, περιποίηση γενειάδας και πλεξούδες — barbershop εμπειρία σε πριμ επίπεδο.</p>
+        </div>
+        <span class="shrink-0 text-transparent group-hover:text-gold transition-all duration-400 text-xl translate-x-3 group-hover:translate-x-0 select-none">→</span>
+        <div class="service-underline-light absolute bottom-0 left-0 h-px bg-gold origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+      </div>
+
+      <div class="service-row group py-10 sm:py-12 flex items-center gap-6 sm:gap-10 cursor-default relative">
+        <span class="font-display text-xs font-light text-gold/25 group-hover:text-gold transition-colors duration-500 tracking-widest shrink-0 select-none w-5">04</span>
+        <div class="flex-1 min-w-0">
+          <h3 class="font-display text-3xl sm:text-4xl lg:text-5xl font-light italic transition-colors duration-400 mb-2" style="color: rgba(30,38,22,0.65);" onmouseover="this.style.color='#83942C'" onmouseout="this.style.color='rgba(30,38,22,0.65)'" data-i18n="svc.4.name">Styling</h3>
+          <p class="font-body text-sm leading-relaxed max-w-md" style="color:rgba(61,68,41,0.55)" data-i18n="svc.4.desc">Χτενίσματα για κάθε περίσταση: καθημερινό look ή επίσημη εκδήλωση.</p>
+        </div>
+        <span class="shrink-0 text-transparent group-hover:text-gold transition-all duration-400 text-xl translate-x-3 group-hover:translate-x-0 select-none">→</span>
+        <div class="service-underline-light absolute bottom-0 left-0 h-px bg-gold origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+      </div>
+
+      <div class="service-row group py-10 sm:py-12 flex items-center gap-6 sm:gap-10 cursor-default relative">
+        <span class="font-display text-xs font-light text-gold/25 group-hover:text-gold transition-colors duration-500 tracking-widest shrink-0 select-none w-5">05</span>
+        <div class="flex-1 min-w-0">
+          <h3 class="font-display text-3xl sm:text-4xl lg:text-5xl font-light italic transition-colors duration-400 mb-2" style="color: rgba(30,38,22,0.65);" onmouseover="this.style.color='#83942C'" onmouseout="this.style.color='rgba(30,38,22,0.65)'" data-i18n="svc.5.name">Face Spa &amp; Θεραπείες</h3>
+          <p class="font-body text-sm leading-relaxed max-w-md" style="color:rgba(61,68,41,0.55)" data-i18n="svc.5.desc">Καθαρισμός προσώπου, θρέψη, ενυδάτωση και ισιωτικές θεραπείες για υγιή μαλλιά.</p>
+        </div>
+        <span class="shrink-0 text-transparent group-hover:text-gold transition-all duration-400 text-xl translate-x-3 group-hover:translate-x-0 select-none">→</span>
+        <div class="service-underline-light absolute bottom-0 left-0 h-px bg-gold origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+      </div>
+
+    </div>
+
+    <div class="mt-16 text-center reveal">
+      <a href="tel:2310836982"
+         class="font-body font-medium tracking-[0.15em] uppercase text-sm px-10 py-4 bg-gold text-white hover:bg-gold-light transition-all duration-300 hover:-translate-y-0.5 inline-block"
+         data-i18n="svc.cta">
+        📞 Κλείστε Ραντεβού
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ RESULTS GALLERY -->
+<section id="results" class="services-bg py-28 lg:py-36 px-6">
+  <div class="max-w-7xl mx-auto">
+
+    <div class="text-center mb-14 reveal">
+      <div class="flex items-center justify-center gap-4 mb-6">
+        <span class="h-px w-8 bg-gold/60"></span>
+        <span class="font-body text-xs tracking-[0.35em] uppercase text-gold/70" data-i18n="gallery.eyebrow">Τα έργα μας</span>
+        <span class="h-px w-8 bg-gold/60"></span>
+      </div>
+      <h2 class="font-display text-5xl lg:text-6xl font-light italic text-cream" data-i18n="gallery.title">Αποτελέσματα</h2>
+    </div>
+
+    <!-- Sub-section: Before & After -->
+    <div class="mb-14">
+      <div class="flex items-center gap-4 mb-6 reveal">
+        <span class="h-px w-6 bg-gold/40"></span>
+        <span class="font-body text-xs tracking-[0.3em] uppercase text-gold/60">Πριν &amp; Μετά</span>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+        <div class="reveal gallery-item overflow-hidden aspect-square cursor-pointer" data-src="photos/beforeafter.jpg">
+          <img src="photos/beforeafter.jpg" alt="Μορφές – πριν και μετά" class="w-full h-full object-cover gallery-img" loading="lazy" />
+        </div>
+        <div class="reveal reveal-d1 gallery-item overflow-hidden aspect-square cursor-pointer" data-src="photos/beforeafter1.jpg">
+          <img src="photos/beforeafter1.jpg" alt="Μορφές – μεταμόρφωση 1" class="w-full h-full object-cover gallery-img" loading="lazy" />
+        </div>
+        <div class="reveal reveal-d2 gallery-item overflow-hidden aspect-square cursor-pointer" data-src="photos/beforeafter2.jpg">
+          <img src="photos/beforeafter2.jpg" alt="Μορφές – μεταμόρφωση 2" class="w-full h-full object-cover gallery-img" loading="lazy" />
+        </div>
+        <div class="reveal reveal-d3 gallery-item overflow-hidden aspect-square cursor-pointer" data-src="photos/beforeafter3.jpg">
+          <img src="photos/beforeafter3.jpg" alt="Μορφές – μεταμόρφωση 3" class="w-full h-full object-cover gallery-img" loading="lazy" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="flex items-center gap-4 mb-10 reveal">
+      <div class="flex-1 h-px bg-gold/10"></div>
+      <div class="w-1.5 h-1.5 bg-gold/30 rotate-45 shrink-0"></div>
+      <div class="flex-1 h-px bg-gold/10"></div>
+    </div>
+
+    <!-- Sub-section: Results -->
+    <div>
+      <div class="flex items-center gap-4 mb-6 reveal">
+        <span class="h-px w-6 bg-gold/40"></span>
+        <span class="font-body text-xs tracking-[0.3em] uppercase text-gold/60">Εργασίες μας</span>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+        <div class="reveal gallery-item overflow-hidden aspect-square cursor-pointer" data-src="photos/seetheresults.jpg">
+          <img src="photos/seetheresults.jpg" alt="Μορφές – αποτέλεσμα" class="w-full h-full object-cover gallery-img" loading="lazy" />
+        </div>
+        <div class="reveal reveal-d1 gallery-item overflow-hidden aspect-square cursor-pointer" data-src="photos/seetheresults2.jpg">
+          <img src="photos/seetheresults2.jpg" alt="Μορφές – αποτέλεσμα 2" class="w-full h-full object-cover gallery-img" loading="lazy" />
+        </div>
+        <div class="reveal reveal-d2 gallery-item overflow-hidden aspect-square cursor-pointer" data-src="photos/2024-08-11.jpg">
+          <img src="photos/2024-08-11.jpg" alt="Μορφές – εργασία 2024" class="w-full h-full object-cover gallery-img" loading="lazy" />
+        </div>
+        <div class="reveal reveal-d3 gallery-item overflow-hidden aspect-square cursor-pointer" data-src="photos/2025-07-14.jpg">
+          <img src="photos/2025-07-14.jpg" alt="Μορφές – εργασία 2025" class="w-full h-full object-cover gallery-img" loading="lazy" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" style="display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,0.92);backdrop-filter:blur(8px);align-items:center;justify-content:center;" onclick="this.style.display='none'">
+      <img id="lightbox-img" src="" alt="" style="max-width:90vw;max-height:90vh;object-fit:contain;border:1px solid rgba(131,148,44,0.2);" />
+      <button onclick="document.getElementById('lightbox').style.display='none'" style="position:absolute;top:1.5rem;right:1.5rem;background:none;border:1px solid rgba(255,255,255,0.2);color:white;width:2.5rem;height:2.5rem;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;">&times;</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ TESTIMONIALS -->
+<section id="testimonials" class="testimonials-bg py-28 lg:py-40 px-6">
+  <div class="max-w-7xl mx-auto">
+
+    <div class="text-center mb-16 reveal">
+      <div class="flex items-center justify-center gap-4 mb-6">
+        <span class="h-px w-8 bg-gold/35"></span>
+        <span class="font-body text-xs tracking-[0.35em] uppercase testi-accent" data-i18n="testi.eyebrow">Τι λένε</span>
+        <span class="h-px w-8 bg-gold/35"></span>
+      </div>
+      <h2 class="font-display text-5xl lg:text-6xl font-light italic testi-heading mb-6">
+        <span data-i18n="testi.title1">οι πελάτες</span>&nbsp;<span data-i18n="testi.title2">μας</span>
+      </h2>
+      <div class="inline-flex items-center gap-3 border border-gold/20 px-6 py-2.5">
+        <span class="stars text-sm">★★★★★</span>
+        <span class="font-body font-medium testi-heading text-sm">4.9</span>
+        <span class="testi-muted text-xs">·</span>
+        <span class="font-body testi-muted text-xs tracking-wide" data-i18n="testi.rating">383 κριτικές Google</span>
+      </div>
+    </div>
+
+    <!-- Desktop 3×3 grid -->
+    <div class="hidden md:grid md:grid-cols-3 gap-5">
+
+      <div class="testi-card reveal">
+        <div class="quote-mark">"</div>
+        <p class="font-body testi-body text-sm leading-relaxed flex-1">Εξαιρετική εμπειρία. Χωρίς καμία υπερβολή, πρόκειται για πραγματικούς επαγγελματίες που προσεγγίζουν κάθε περίπτωση με αφοσίωση, υπομονή και στόχο το καλύτερο.</p>
+        <div><p class="font-body font-medium testi-name text-sm">Μαργαρίτη Μαργαρίτα</p><span class="stars text-xs">★★★★★</span></div>
+      </div>
+
+      <div class="testi-card reveal reveal-d1">
+        <div class="quote-mark">"</div>
+        <p class="font-body testi-body text-sm leading-relaxed flex-1">Ως επαγγελματίας μοντέλο προσέχω πολύ την εξωτερική μου εμφάνιση. Ήρθα στις Μορφές κ έφυγα απόλυτα ικανοποιημένος. Κάνουν Face Spa, καθαρισμό — 5 αστέρια σίγουρα!</p>
+        <div><p class="font-body font-medium testi-name text-sm">Χρηστος Πουλος</p><span class="stars text-xs">★★★★★</span></div>
+      </div>
+
+      <div class="testi-card reveal reveal-d2">
+        <div class="quote-mark">"</div>
+        <p class="font-body testi-body text-sm leading-relaxed flex-1">Απίστευτο περιβάλλον, υπέροχα παιδιά ο Γιάννης και η Δέσποινα — γρήγοροι και πολύ καλοί στη δουλειά τους! Συστήνω ανεπιφύλακτα.</p>
+        <div><p class="font-body font-medium testi-name text-sm">Asterios Karatsivopoulos</p><span class="stars text-xs">★★★★★</span></div>
+      </div>
+
+      <div class="testi-card reveal">
+        <div class="quote-mark">"</div>
+        <p class="font-body testi-body text-sm leading-relaxed flex-1">Κούρεμα, ξύρισμα, πλεξούδια — ήμουν απόλυτα ευχαριστημένος. Το προτείνω ανεπιφύλακτα, οπωσδήποτε Μορφές!</p>
+        <div><p class="font-body font-medium testi-name text-sm">Damianos Agorastos</p><span class="stars text-xs">★★★★★</span></div>
+      </div>
+
+      <div class="testi-card reveal reveal-d1">
+        <div class="quote-mark">"</div>
+        <p class="font-body testi-body text-sm leading-relaxed flex-1">Χρώμα και χτένισμα όπως ακριβώς τα ζήτησα. Δεν τους αλλάζω με τίποτα. Επαγγελματισμός, άψογο αποτέλεσμα και πολύ καλές τιμές!</p>
+        <div><p class="font-body font-medium testi-name text-sm">Aspasia Ioannidou</p><span class="stars text-xs">★★★★★</span></div>
+      </div>
+
+      <div class="testi-card reveal reveal-d2">
+        <div class="quote-mark">"</div>
+        <p class="font-body testi-body text-sm leading-relaxed flex-1">Τέλειο χρώμα, ανταύγειες, κούρεμα, εξυπηρέτηση! Στο top όλα. Υπέροχος ο Γιάννης και η Δέσποινα.</p>
+        <div><p class="font-body font-medium testi-name text-sm">Σοφία Παντικίδου</p><span class="stars text-xs">★★★★★</span></div>
+      </div>
+
+      <div class="testi-card reveal">
+        <div class="quote-mark">"</div>
+        <p class="font-body testi-body text-sm leading-relaxed flex-1">Άρτια εξειδικευμένο και ευγενικό προσωπικό. Ατμόσφαιρα που σε κερδίζει από την πρώτη στιγμή. Δεν αλλάζω κομμωτήριο!</p>
+        <div><p class="font-body font-medium testi-name text-sm">Θάλεια Διούδη</p><span class="stars text-xs">★★★★★</span></div>
+      </div>
+
+      <div class="testi-card reveal reveal-d1">
+        <div class="quote-mark">"</div>
+        <p class="font-body testi-body text-sm leading-relaxed flex-1">Τα 5 αστέρια είναι πραγματικά λίγα! Η Δέσποινα και ο Γιάννης απλά υπέροχοι, ευγενικοί και εξαιρετικοί στην δουλειά τους!</p>
+        <div><p class="font-body font-medium testi-name text-sm">Evi Spiliou</p><span class="stars text-xs">★★★★★</span></div>
+      </div>
+
+      <div class="testi-card reveal reveal-d2">
+        <div class="quote-mark">"</div>
+        <p class="font-body testi-body text-sm leading-relaxed flex-1">Το καλύτερο ανδρικό κούρεμα. Ως επαγγελματίας τραγουδιστής πάντα είχα πρόβλημα — στις Μορφές το χάρηκα κι από εδώ μόνο!</p>
+        <div><p class="font-body font-medium testi-name text-sm">Γιάννης Κύρου</p><span class="stars text-xs">★★★★★</span></div>
+      </div>
+
+    </div>
+
+    <!-- Mobile carousel -->
+    <div class="md:hidden relative overflow-hidden" id="carousel-wrapper">
+      <div class="carousel-track flex" id="carousel-track">
+
+        <div class="testi-slide testi-card min-w-full">
+          <div class="quote-mark">"</div>
+          <p class="font-body testi-body text-sm leading-relaxed flex-1">Εξαιρετική εμπειρία. Πραγματικοί επαγγελματίες που προσεγγίζουν κάθε περίπτωση με αφοσίωση και υπομονή.</p>
+          <div><p class="font-body font-medium testi-name text-sm">Μαργαρίτη Μαργαρίτα</p><span class="stars text-xs">★★★★★</span></div>
+        </div>
+
+        <div class="testi-slide testi-card min-w-full">
+          <div class="quote-mark">"</div>
+          <p class="font-body testi-body text-sm leading-relaxed flex-1">Ως επαγγελματίας μοντέλο έφυγα απόλυτα ικανοποιημένος. Κάνουν και Face Spa — 5 αστέρια σίγουρα!</p>
+          <div><p class="font-body font-medium testi-name text-sm">Χρηστος Πουλος</p><span class="stars text-xs">★★★★★</span></div>
+        </div>
+
+        <div class="testi-slide testi-card min-w-full">
+          <div class="quote-mark">"</div>
+          <p class="font-body testi-body text-sm leading-relaxed flex-1">Απίστευτο περιβάλλον, υπέροχα παιδιά ο Γιάννης και η Δέσποινα! Συστήνω ανεπιφύλακτα.</p>
+          <div><p class="font-body font-medium testi-name text-sm">Asterios Karatsivopoulos</p><span class="stars text-xs">★★★★★</span></div>
+        </div>
+
+        <div class="testi-slide testi-card min-w-full">
+          <div class="quote-mark">"</div>
+          <p class="font-body testi-body text-sm leading-relaxed flex-1">Κούρεμα, ξύρισμα, πλεξούδια — απόλυτα ευχαριστημένος. Το προτείνω ανεπιφύλακτα!</p>
+          <div><p class="font-body font-medium testi-name text-sm">Damianos Agorastos</p><span class="stars text-xs">★★★★★</span></div>
+        </div>
+
+        <div class="testi-slide testi-card min-w-full">
+          <div class="quote-mark">"</div>
+          <p class="font-body testi-body text-sm leading-relaxed flex-1">Χρώμα και χτένισμα ακριβώς όπως τα ζήτησα. Επαγγελματισμός, άψογο αποτέλεσμα και καλές τιμές!</p>
+          <div><p class="font-body font-medium testi-name text-sm">Aspasia Ioannidou</p><span class="stars text-xs">★★★★★</span></div>
+        </div>
+
+        <div class="testi-slide testi-card min-w-full">
+          <div class="quote-mark">"</div>
+          <p class="font-body testi-body text-sm leading-relaxed flex-1">Τέλειο χρώμα, ανταύγειες, κούρεμα, εξυπηρέτηση! Στο top όλα. Υπέροχος ο Γιάννης και η Δέσποινα.</p>
+          <div><p class="font-body font-medium testi-name text-sm">Σοφία Παντικίδου</p><span class="stars text-xs">★★★★★</span></div>
+        </div>
+
+        <div class="testi-slide testi-card min-w-full">
+          <div class="quote-mark">"</div>
+          <p class="font-body testi-body text-sm leading-relaxed flex-1">Άρτια εξειδικευμένο και ευγενικό προσωπικό. Δεν αλλάζω κομμωτήριο!</p>
+          <div><p class="font-body font-medium testi-name text-sm">Θάλεια Διούδη</p><span class="stars text-xs">★★★★★</span></div>
+        </div>
+
+        <div class="testi-slide testi-card min-w-full">
+          <div class="quote-mark">"</div>
+          <p class="font-body testi-body text-sm leading-relaxed flex-1">Τα 5 αστέρια είναι πραγματικά λίγα! Η Δέσποινα και ο Γιάννης απλά υπέροχοι!</p>
+          <div><p class="font-body font-medium testi-name text-sm">Evi Spiliou</p><span class="stars text-xs">★★★★★</span></div>
+        </div>
+
+        <div class="testi-slide testi-card min-w-full">
+          <div class="quote-mark">"</div>
+          <p class="font-body testi-body text-sm leading-relaxed flex-1">Το καλύτερο ανδρικό κούρεμα. Ως τραγουδιστής πάντα είχα πρόβλημα — στις Μορφές το χάρηκα!</p>
+          <div><p class="font-body font-medium testi-name text-sm">Γιάννης Κύρου</p><span class="stars text-xs">★★★★★</span></div>
+        </div>
+
+      </div>
+
+      <div class="flex justify-center mt-6">
+        <div id="carousel-dots" class="flex gap-2"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ BOOKING -->
+<section id="booking" class="services-bg py-28 lg:py-40 px-6">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="text-center mb-16 reveal">
+      <div class="flex items-center justify-center gap-4 mb-6">
+        <span class="h-px w-8 bg-gold/50"></span>
+        <span class="font-body text-xs tracking-[0.35em] uppercase text-gold/70" data-i18n="book.eyebrow">Online Ραντεβού</span>
+        <span class="h-px w-8 bg-gold/50"></span>
+      </div>
+      <h2 class="font-display text-5xl lg:text-6xl font-light italic text-cream mb-4" data-i18n="book.title">Κλείστε Ραντεβού</h2>
+      <p class="font-body text-cream/50 text-base max-w-md mx-auto" data-i18n="book.sub">Επιλέξτε υπηρεσία, ημερομηνία και ώρα που σας βολεύει.</p>
+    </div>
+
+    <div class="max-w-2xl mx-auto reveal">
+      <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(131,148,44,0.2); padding: 2.5rem; border-radius: 1rem;">
+        <div id="booking-widget"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ FRAGINA -->
+<section id="fragina" style="background: linear-gradient(135deg, #0d0010 0%, #1a0025 35%, #0a0015 60%, #0f000a 100%); position: relative; overflow: hidden;" class="py-28 lg:py-40 px-6">
+
+  <!-- Decorative purple glow blobs -->
+  <div style="position:absolute;top:-10%;left:-5%;width:50%;height:80%;background:radial-gradient(ellipse, rgba(139,0,255,0.12) 0%, transparent 70%);pointer-events:none;" aria-hidden="true"></div>
+  <div style="position:absolute;bottom:-15%;right:-5%;width:55%;height:80%;background:radial-gradient(ellipse, rgba(180,0,200,0.10) 0%, transparent 70%);pointer-events:none;" aria-hidden="true"></div>
+
+  <!-- Diamond sparkle texture -->
+  <div style="position:absolute;inset:0;opacity:0.025;background-image:url(&quot;data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E&quot;);background-size:300px 300px;pointer-events:none;" aria-hidden="true"></div>
+
+  <div class="max-w-6xl mx-auto relative z-10">
+
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Left: text -->
+      <div class="reveal">
+        <div class="flex items-center gap-4 mb-8">
+          <span class="h-px w-8" style="background: rgba(200,100,255,0.5);"></span>
+          <span class="font-body text-xs tracking-[0.35em] uppercase" style="color: rgba(200,140,255,0.7);" data-i18n="fragina.eyebrow">Αποκλειστικό Προϊόν</span>
+        </div>
+
+        <h2 class="font-display font-light italic mb-4" style="font-size: clamp(3rem, 8vw, 5.5rem); line-height: 1; color: #ffffff;">
+          Fragina
+        </h2>
+        <p class="font-display font-light italic mb-8" style="font-size: clamp(1.2rem, 3vw, 1.8rem); color: rgba(200,140,255,0.75);">
+          Diamond Hair Repair Mask
+        </p>
+
+        <p class="font-body text-base leading-relaxed mb-6" style="color: rgba(255,255,255,0.55);" data-i18n="fragina.p">
+          Μια εξαιρετική μάσκα επανόρθωσης μαλλιών με μικροδιαμάντια που δημιουργήσαμε αποκλειστικά στα Μορφές. Αποκαθιστά, ενυδατώνει και χαρίζει εκπληκτική λάμψη σε κάθε τύπο μαλλιών.
+        </p>
+
+        <ul class="space-y-3 mb-10 font-body text-sm" style="color: rgba(255,255,255,0.5);">
+          <li class="flex items-center gap-3">
+            <span style="color: rgba(200,140,255,0.8);">◆</span><span data-i18n="fragina.f1">Μικροδιαμάντια για εκτυφλωτική λάμψη</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span style="color: rgba(200,140,255,0.8);">◆</span><span data-i18n="fragina.f2">Εντατική επανόρθωση κατεστραμμένων μαλλιών</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span style="color: rgba(200,140,255,0.8);">◆</span><span data-i18n="fragina.f3">Βαθιά ενυδάτωση από τη ρίζα ως την άκρη</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span style="color: rgba(200,140,255,0.8);">◆</span><span data-i18n="fragina.f4">Αποκλειστικά διαθέσιμο στα Μορφές</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span style="color: rgba(200,140,255,0.8);">◆</span><span data-i18n="fragina.f5">Χωρίς επιβλαβή χημικά — premium σύνθεση</span>
+          </li>
+        </ul>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#booking"
+             class="font-body font-medium tracking-[0.12em] uppercase text-sm px-8 py-4 text-center transition-all duration-300"
+             style="background: linear-gradient(135deg, rgba(139,0,255,0.6), rgba(180,0,200,0.5)); color: white; border: 1px solid rgba(180,100,255,0.4);"
+             data-i18n="fragina.cta1">
+            Κλείστε Ραντεβού
+          </a>
+          <a href="tel:2310836982"
+             class="font-body font-medium tracking-[0.12em] uppercase text-sm px-8 py-4 text-center transition-all duration-300"
+             style="background: transparent; border: 1px solid rgba(180,100,255,0.3); color: rgba(200,140,255,0.8);">
+            231 083 6982
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: visual -->
+      <div class="reveal reveal-d1 flex flex-col items-center justify-center gap-6">
+
+        <!-- Central diamond visual -->
+        <div style="position: relative; width: 280px; height: 280px;" class="mx-auto">
+          <!-- Outer glow rings -->
+          <div style="position:absolute;inset:0;border-radius:50%;background:radial-gradient(ellipse, rgba(160,0,255,0.15) 0%, transparent 70%);animation:fragina-pulse 3s ease-in-out infinite;"></div>
+          <div style="position:absolute;inset:20px;border-radius:50%;border:1px solid rgba(180,100,255,0.2);animation:fragina-spin 12s linear infinite;"></div>
+          <div style="position:absolute;inset:40px;border-radius:50%;border:1px solid rgba(200,100,255,0.15);animation:fragina-spin 18s linear infinite reverse;"></div>
+
+          <!-- Diamond icon -->
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem;">
+            <div style="font-size:5rem;filter:drop-shadow(0 0 20px rgba(180,100,255,0.6));">💎</div>
+            <p class="font-display italic text-center" style="color:rgba(200,140,255,0.8);font-size:0.9rem;letter-spacing:0.15em;">DIAMOND</p>
+          </div>
+        </div>
+
+        <!-- Label card -->
+        <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(180,100,255,0.2);padding:1.5rem 2rem;text-align:center;max-width:280px;width:100%;">
+          <p class="font-body text-xs tracking-[0.3em] uppercase mb-2" style="color:rgba(200,140,255,0.5);" data-i18n="fragina.only">Μόνο στα</p>
+          <p class="font-display italic text-2xl font-light" style="color:white;">Μορφές</p>
+          <p class="font-body text-xs mt-2" style="color:rgba(255,255,255,0.3);">Δελφών 95 · Θεσσαλονίκη</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+@keyframes fragina-pulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50%       { opacity: 1;   transform: scale(1.05); }
+}
+@keyframes fragina-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+</style>
+
+<!-- ═══════════════════════════════════════ CONTACT -->
+<section id="contact" class="contact-bg py-28 lg:py-40 px-6">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="text-center mb-16 reveal">
+      <div class="flex items-center justify-center gap-4 mb-6">
+        <span class="h-px w-8 bg-gold/50"></span>
+        <span class="font-body text-xs tracking-[0.35em] uppercase text-gold/70" data-i18n="contact.eyebrow">Πού θα μας βρείτε</span>
+        <span class="h-px w-8 bg-gold/50"></span>
+      </div>
+      <h2 class="font-display text-5xl lg:text-6xl font-light italic text-cream mb-2" data-i18n="contact.title">Επικοινωνία</h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-10 items-start">
+
+      <div class="space-y-5 reveal">
+
+        <!-- Address -->
+        <a href="https://maps.google.com/?q=Δελφών+95+Θεσσαλονίκη+546+44"
+           target="_blank" rel="noopener"
+           class="flex gap-5 items-start p-6 border border-cream/10 hover:border-gold/40 transition-colors duration-300 group">
+          <div class="w-12 h-12 shrink-0 flex items-center justify-center bg-gold/10 text-xl">📍</div>
+          <div>
+            <p class="font-body font-medium text-cream text-sm group-hover:text-gold transition-colors duration-300" data-i18n="contact.addr.lbl">Διεύθυνση</p>
+            <p class="font-body text-cream/50 text-sm mt-1">Δελφών 95</p>
+            <p class="font-body text-cream/50 text-sm">Θεσσαλονίκη 546 44</p>
+            <p class="font-body text-gold/70 text-xs mt-1.5 font-medium" data-i18n="contact.addr.maps">Άνοιγμα στο Google Maps →</p>
+          </div>
+        </a>
+
+        <!-- Phone -->
+        <a href="tel:2310836982"
+           class="flex gap-5 items-start p-6 border border-cream/10 hover:border-gold/40 transition-colors duration-300 group">
+          <div class="w-12 h-12 shrink-0 flex items-center justify-center bg-gold/10 text-xl">📞</div>
+          <div>
+            <p class="font-body font-medium text-cream text-sm group-hover:text-gold transition-colors duration-300" data-i18n="contact.phone.lbl">Τηλέφωνο</p>
+            <p class="font-body text-cream/50 text-sm mt-1">231 083 6982</p>
+            <p class="font-body text-gold/70 text-xs mt-1.5 font-medium" data-i18n="contact.phone.cta">Πατήστε για κλήση →</p>
+          </div>
+        </a>
+
+        <!-- Hours -->
+        <div class="flex gap-5 items-start p-6 border border-cream/10">
+          <div class="w-12 h-12 shrink-0 flex items-center justify-center bg-gold/10 text-xl">🕐</div>
+          <div>
+            <p class="font-body font-medium text-cream text-sm" data-i18n="contact.hours.lbl">Ώρες Λειτουργίας</p>
+            <div class="font-body text-cream/50 text-sm mt-1 space-y-0.5">
+              <p data-i18n="contact.hours.1">Τρίτη – Παρασκευή: 09:00 – 19:00</p>
+              <p data-i18n="contact.hours.2">Σάββατο: 09:00 – 19:00</p>
+              <p class="text-gold/70 font-medium mt-1" data-i18n="contact.hours.3">Δευτέρα &amp; Κυριακή: Κλειστά</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <a href="tel:2310836982"
+           class="flex items-center justify-center gap-2 w-full font-body font-medium tracking-[0.15em] uppercase text-sm py-4 bg-gold text-white hover:bg-gold-light transition-all duration-300 hover:-translate-y-0.5"
+           data-i18n="contact.cta">
+          📞 Κλείστε Ραντεβού — 231 083 6982
+        </a>
+      </div>
+
+      <!-- Map -->
+      <div class="reveal reveal-d1 overflow-hidden h-80 md:h-full min-h-80 border border-cream/10">
+        <iframe
+          title="Μορφές στο Google Maps"
+          src="https://maps.google.com/maps?q=Δελφών+95+Θεσσαλονίκη&output=embed&z=16"
+          width="100%"
+          height="100%"
+          style="border:0; min-height:320px; filter: grayscale(0.6) brightness(0.85) sepia(0.15) hue-rotate(60deg);"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ FOOTER -->
+<footer class="footer-bg py-16 px-6">
+  <div class="max-w-7xl mx-auto">
+
+    <div class="grid sm:grid-cols-3 gap-10 pb-10 border-b border-cream/[0.07]">
+
+      <div>
+        <img src="photos/logotransparent.png" alt="Μορφές" class="h-14 w-auto object-contain mb-2 opacity-90" />
+        <p class="font-body text-xs text-cream/35 tracking-wide mb-3" data-i18n="footer.tagline">Κομμωτήριο &amp; Barbershop</p>
+        <p class="font-body text-sm text-cream/40 leading-relaxed">
+          Δελφών 95<br>Θεσσαλονίκη 546 44
+        </p>
+        <div class="flex gap-3 mt-5">
+          <a href="#" aria-label="Facebook"
+             class="w-9 h-9 border border-cream/15 flex items-center justify-center font-body text-cream/40 text-xs hover:border-gold hover:text-gold transition-all duration-300">f</a>
+          <a href="#" aria-label="Instagram"
+             class="w-9 h-9 border border-cream/15 flex items-center justify-center font-body text-cream/40 text-xs hover:border-gold hover:text-gold transition-all duration-300">in</a>
+        </div>
+      </div>
+
+      <div>
+        <p class="font-body text-xs font-medium uppercase tracking-[0.25em] text-cream/30 mb-5" data-i18n="footer.nav.title">Πλοήγηση</p>
+        <ul class="space-y-3 font-body text-sm text-cream/50">
+          <li><a href="#about"        class="hover:text-gold transition-colors" data-i18n="footer.nav.about">Σχετικά</a></li>
+          <li><a href="#services"     class="hover:text-gold transition-colors" data-i18n="footer.nav.svc">Υπηρεσίες</a></li>
+          <li><a href="#results"      class="hover:text-gold transition-colors" data-i18n="footer.nav.results">Αποτελέσματα</a></li>
+          <li><a href="#testimonials" class="hover:text-gold transition-colors" data-i18n="footer.nav.reviews">Κριτικές</a></li>
+          <li><a href="#booking"      class="hover:text-gold transition-colors" data-i18n="footer.nav.book">Ραντεβού</a></li>
+          <li><a href="#fragina"      class="hover:text-gold transition-colors">Fragina Mask</a></li>
+          <li><a href="#contact"      class="hover:text-gold transition-colors" data-i18n="footer.nav.contact">Επικοινωνία</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="font-body text-xs font-medium uppercase tracking-[0.25em] text-cream/30 mb-5" data-i18n="footer.contact.title">Επικοινωνία</p>
+        <ul class="space-y-3 font-body text-sm text-cream/50">
+          <li class="flex items-start gap-2">
+            <span class="text-gold/60 mt-0.5">📍</span>
+            <span>Δελφών 95, Θεσσαλονίκη 546 44</span>
+          </li>
+          <li>
+            <a href="tel:2310836982" class="flex items-center gap-2 hover:text-gold transition-colors">
+              <span class="text-gold/60">📞</span>
+              231 083 6982
+            </a>
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-gold/60">🕐</span>
+            09:00 – 19:00
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-gold/60">🌈</span>
+            LGBTQ+ Friendly
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-body text-xs text-cream/25">
+      <p data-i18n="footer.copy">© 2025 Μορφές. Με επιφύλαξη παντός δικαιώματος.</p>
+      <a href="tel:2310836982"
+         class="border border-gold/40 text-gold/70 px-6 py-2 text-xs tracking-[0.15em] uppercase hover:bg-gold hover:text-white hover:border-gold transition-all duration-300"
+         data-i18n="footer.cta">
+        📞 Ραντεβού
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════ FLOATING CALL (mobile) -->
+<a href="tel:2310836982" class="float-call md:hidden" aria-label="Τηλεφωνήστε μας">
+  <svg class="w-6 h-6" fill="white" viewBox="0 0 24 24">
+    <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
+  </svg>
+</a>
+
+<!-- ═══════════════════════════════════════ BACK TO TOP -->
+<button id="back-to-top" aria-label="Επιστροφή στην κορυφή">
+  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+  </svg>
+</button>
+
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="booking.js"></script>
+<script src="i18n.js"></script>
+
+<!-- ═══════════════════════════════════════ V1: REFINED -->
+<style>
+.v1-dot {
+  position:fixed;width:7px;height:7px;background:#83942C;border-radius:50%;
+  pointer-events:none;z-index:9999;left:-20px;top:-20px;transform:translate(-50%,-50%);
+}
+.v1-ring {
+  position:fixed;width:32px;height:32px;border:1.5px solid rgba(131,148,44,0.55);
+  border-radius:50%;pointer-events:none;z-index:9998;left:-20px;top:-20px;
+  transform:translate(-50%,-50%);
+  transition:width 0.35s ease,height 0.35s ease,border-color 0.35s ease;
+}
+.v1-ring.hover{width:52px;height:52px;border-color:#83942C;}
+.nav-link{position:relative;}
+.nav-link::after{
+  content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:#83942C;
+  transition:width 0.35s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+.nav-link:hover::after{width:100%;}
+@keyframes v1-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.reveal{transition:opacity 0.5s ease,transform 0.5s ease;}
+</style>
+<script>
+(function(){
+  var dot=document.createElement('div');dot.className='v1-dot';
+  var ring=document.createElement('div');ring.className='v1-ring';
+  document.body.appendChild(dot);document.body.appendChild(ring);
+  var mx=window.innerWidth/2,my=window.innerHeight/2,rx=mx,ry=my;
+  document.addEventListener('mousemove',function(e){
+    mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';
+  });
+  (function anim(){
+    rx+=(mx-rx)*0.13;ry+=(my-ry)*0.13;
+    ring.style.left=rx+'px';ring.style.top=ry+'px';
+    requestAnimationFrame(anim);
+  })();
+  document.querySelectorAll('a,button').forEach(function(el){
+    el.addEventListener('mouseenter',function(){ring.classList.add('hover');});
+    el.addEventListener('mouseleave',function(){ring.classList.remove('hover');});
+  });
+  var logo=document.querySelector('.hero-title img');
+  if(logo)logo.style.animation='v1-float 5s ease-in-out infinite';
+  document.querySelectorAll('a').forEach(function(btn){
+    if(!btn.className.includes('bg-gold'))return;
+    btn.addEventListener('mousemove',function(e){
+      var r=btn.getBoundingClientRect();
+      var x=(e.clientX-r.left-r.width/2)*0.22;
+      var y=(e.clientY-r.top-r.height/2)*0.22;
+      btn.style.transform='translate('+x+'px,'+y+'px)';
+      btn.style.transition='transform 0.08s ease';
+    });
+    btn.addEventListener('mouseleave',function(){
+      btn.style.transform='';btn.style.transition='transform 0.5s ease';
+    });
+  });
+})();
+</script>
+</body>
+</html>
