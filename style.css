@@ -24,7 +24,7 @@ h1, h2, h3, h4, .font-display { font-family: 'Cormorant Garant', Georgia, serif;
 section[id] { scroll-margin-top: 5rem; }
 
 /* ═══════════════════════════════════════════ NAV */
-#navbar { background: transparent; }
+#navbar { background: rgba(37, 46, 30, 0.92); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(131,148,44,0.15); }
 #navbar.scrolled {
   background: rgba(37, 46, 30, 0.96);
   backdrop-filter: blur(14px);
