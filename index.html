@@ -924,12 +924,9 @@
 /* ── Hero logo float (starts after entrance) ── */
 @keyframes fin-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-11px)}}
 
-/* ── Clip-path h2 wipe ── */
-.fin-wipe{
-  clip-path:inset(0 100% 0 0);
-  transition:clip-path 0.95s cubic-bezier(0.77,0,0.175,1) 0.1s;
-}
-.fin-wipe.visible{clip-path:inset(0 0% 0 0);}
+/* ── h2 fade-up ── */
+.fin-h2{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.fin-h2.visible{opacity:1;transform:translateY(0);}
 
 /* ── Service rows slide from left ── */
 .service-row{opacity:0;transform:translateX(-28px);transition:opacity 0.55s ease,transform 0.55s ease;}
@@ -1031,14 +1028,14 @@
     });
   });
 
-  /* ── Clip-path wipe on h2 headings ── */
+  /* ── h2 fade-up on scroll ── */
   var wObs=new IntersectionObserver(function(entries){
     entries.forEach(function(e){
       if(e.isIntersecting){e.target.classList.add('visible');wObs.unobserve(e.target);}
     });
-  },{threshold:0.2});
+  },{threshold:0,rootMargin:'0px 0px -60px 0px'});
   document.querySelectorAll('h2').forEach(function(h){
-    h.classList.add('fin-wipe');wObs.observe(h);
+    h.classList.add('fin-h2');wObs.observe(h);
   });
 
   /* ── Typewriter hero subtitle (after i18n + entrance) ── */
